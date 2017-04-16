@@ -222,6 +222,8 @@
     <Compile Include="DemanderConge.aspx.designer.cs">
       <DependentUpon>DemanderConge.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Categorie.cs" />
+    <Compile Include="Entities\Conge.cs" />
     <Compile Include="Entities\Cotisation.cs" />
     <Compile Include="Entities\DemandeConge.cs" />
     <Compile Include="Entities\Employe.cs" />
@@ -255,6 +257,18 @@
     </Compile>
     <Compile Include="GestionSalaire.aspx.designer.cs">
       <DependentUpon>GestionSalaire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704161822084_Conge.cs" />
+    <Compile Include="Migrations\201704161822084_Conge.Designer.cs">
+      <DependentUpon>201704161822084_Conge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704161837091_Categorie.cs" />
+    <Compile Include="Migrations\201704161837091_Categorie.Designer.cs">
+      <DependentUpon>201704161837091_Categorie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704161838168_Categorie1.cs" />
+    <Compile Include="Migrations\201704161838168_Categorie1.Designer.cs">
+      <DependentUpon>201704161838168_Categorie1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ParametrerSalaire.aspx.cs">
@@ -291,6 +305,15 @@
     <Compile Include="Utilities\LiteralControlUtility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704161822084_Conge.resx">
+      <DependentUpon>201704161822084_Conge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704161837091_Categorie.resx">
+      <DependentUpon>201704161837091_Categorie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704161838168_Categorie1.resx">
+      <DependentUpon>201704161838168_Categorie1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ParametrerSalaire.aspx.resx">
       <DependentUpon>ParametrerSalaire.aspx.cs</DependentUpon>
     </EmbeddedResource>
