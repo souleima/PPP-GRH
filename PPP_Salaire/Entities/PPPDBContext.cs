@@ -8,7 +8,8 @@ namespace PPP_Salaire.Entities
     public class PPPDBContext : DbContext
     {
         public DbSet<DemandeConge> DemandeConges { get; set; }
+        public DbSet<Conge> Conges { get; set; }
         public DbSet<Employe> Employes { get; set; }
-
+        public DbSet<Categorie> Categories { get; set; }
     }
 }
