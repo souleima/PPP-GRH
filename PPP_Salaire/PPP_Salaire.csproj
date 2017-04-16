@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CCCD4A81-7C27-4FC4-BA75-512AB273E8FE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PPP_Salaire</RootNamespace>
+    <AssemblyName>PPP_Salaire</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.11.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.11\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization">
+      <HintPath>..\packages\Microsoft.Chart.Controls.3.5.30729\lib\net35\System.Web.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization.Design">
+      <HintPath>..\packages\Microsoft.Chart.Controls.3.5.30729\lib\net35\System.Web.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization">
+      <HintPath>..\packages\Microsoft.Chart.Controls.3.5.30729\lib\net35\System.Windows.Forms.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization.Design">
+      <HintPath>..\packages\Microsoft.Chart.Controls.3.5.30729\lib\net35\System.Windows.Forms.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddCategory.aspx" />
+    <Content Include="AddEmployer.aspx" />
+    <Content Include="AdminTempL\css\bootstrap-social.css" />
+    <Content Include="AdminTempL\css\bootstrap-theme.min.css" />
+    <Content Include="AdminTempL\css\bootstrap.min.css" />
+    <Content Include="AdminTempL\css\dataTables\dataTables.bootstrap.css" />
+    <Content Include="AdminTempL\css\dataTables\dataTables.responsive.css" />
+    <Content Include="AdminTempL\css\font-awesome.min.css" />
+    <Content Include="AdminTempL\css\metisMenu.min.css" />
+    <Content Include="AdminTempL\css\morris.css" />
+    <Content Include="AdminTempL\css\startmin.css" />
+    <Content Include="AdminTempL\css\timeline.css" />
+    <Content Include="AdminTempL\fonts\fontawesome-webfont.svg" />
+    <Content Include="AdminTempL\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="AdminTempL\js\bootstrap.min.js" />
+    <Content Include="AdminTempL\js\dataTables\dataTables.bootstrap.min.js" />
+    <Content Include="AdminTempL\js\dataTables\jquery.dataTables.min.js" />
+    <Content Include="AdminTempL\js\flot-data.js" />
+    <Content Include="AdminTempL\js\flot\excanvas.min.js" />
+    <Content Include="AdminTempL\js\flot\jquery.colorhelpers.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.canvas.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.categories.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.crosshair.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.errorbars.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.fillbetween.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.image.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.navigate.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.pie.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.resize.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.selection.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.stack.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.symbol.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.threshold.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.time.js" />
+    <Content Include="AdminTempL\js\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="AdminTempL\js\jquery.min.js" />
+    <Content Include="AdminTempL\js\metisMenu.min.js" />
+    <Content Include="AdminTempL\js\morris-data.js" />
+    <Content Include="AdminTempL\js\morris.min.js" />
+    <Content Include="AdminTempL\js\raphael.min.js" />
+    <Content Include="AdminTempL\js\startmin.js" />
+    <Content Include="AdminTempL\TEMPLATE.html" />
+    <Content Include="CongeEmploye.aspx" />
+    <Content Include="DemanderConge.aspx" />
+    <Content Include="GestionCategorie.aspx" />
+    <Content Include="GestionConge.aspx" />
+    <Content Include="GestionEmploye.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Content\MyCss.less" />
+    <Content Include="pppMaster.Master" />
+    <Content Include="AdminTempL\.gitignore" />
+    <Content Include="AdminTempL\composer.json" />
+    <Content Include="AdminTempL\fonts\fontawesome-webfont.eot" />
+    <Content Include="AdminTempL\fonts\fontawesome-webfont.ttf" />
+    <Content Include="AdminTempL\fonts\fontawesome-webfont.woff" />
+    <Content Include="AdminTempL\fonts\fontawesome-webfont.woff2" />
+    <Content Include="AdminTempL\fonts\FontAwesome.otf" />
+    <Content Include="AdminTempL\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="AdminTempL\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="AdminTempL\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="AdminTempL\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="AdminTempL\LICENSE" />
+    <Content Include="AdminTempL\README.md" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GestionSalaire.aspx" />
+    <Content Include="ParametrerSalaire.aspx" />
+    <Content Include="SalaireEmploye.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="StatisticsConge.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCategory.aspx.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCategory.aspx.designer.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEmployer.aspx.cs">
+      <DependentUpon>AddEmployer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEmployer.aspx.designer.cs">
+      <DependentUpon>AddEmployer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CongeEmploye.aspx.cs">
+      <DependentUpon>CongeEmploye.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CongeEmploye.aspx.designer.cs">
+      <DependentUpon>CongeEmploye.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DemanderConge.aspx.cs">
+      <DependentUpon>DemanderConge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DemanderConge.aspx.designer.cs">
+      <DependentUpon>DemanderConge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Cotisation.cs" />
+    <Compile Include="Entities\DemandeConge.cs" />
+    <Compile Include="Entities\Employe.cs" />
+    <Compile Include="Entities\PPPDBContext.cs" />
+    <Compile Include="Entities\Remuneration.cs" />
+    <Compile Include="Entities\Salaire.cs" />
+    <Compile Include="GestionCategorie.aspx.cs">
+      <DependentUpon>GestionCategorie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionCategorie.aspx.designer.cs">
+      <DependentUpon>GestionCategorie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionConge.aspx.cs">
+      <DependentUpon>GestionConge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionConge.aspx.designer.cs">
+      <DependentUpon>GestionConge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionEmploye.aspx.cs">
+      <DependentUpon>GestionEmploye.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionEmploye.aspx.designer.cs">
+      <DependentUpon>GestionEmploye.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionSalaire.aspx.cs">
+      <DependentUpon>GestionSalaire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionSalaire.aspx.designer.cs">
+      <DependentUpon>GestionSalaire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ParametrerSalaire.aspx.cs">
+      <DependentUpon>ParametrerSalaire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ParametrerSalaire.aspx.designer.cs">
+      <DependentUpon>ParametrerSalaire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pppMaster.Master.cs">
+      <DependentUpon>pppMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pppMaster.Master.designer.cs">
+      <DependentUpon>pppMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\EmployeRepository.cs" />
+    <Compile Include="Repositories\IEmployeRepository.cs" />
+    <Compile Include="SalaireEmploye.aspx.cs">
+      <DependentUpon>SalaireEmploye.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalaireEmploye.aspx.designer.cs">
+      <DependentUpon>SalaireEmploye.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticsConge.aspx.cs">
+      <DependentUpon>StatisticsConge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StatisticsConge.aspx.designer.cs">
+      <DependentUpon>StatisticsConge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\LiteralControlUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ParametrerSalaire.aspx.resx">
+      <DependentUpon>ParametrerSalaire.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PDFs\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58644</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58644/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
