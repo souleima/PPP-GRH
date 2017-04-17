@@ -9,5 +9,9 @@ namespace PPP_Salaire.Entities
     {
         public int Id { get; set; }
         public string Nom { get; set; }
+        public int NbJours { get; set; }
+        public int Par_Jours_De_Travail { get; set; }
+        public int Justifié { get; set; }
+
     }
 }

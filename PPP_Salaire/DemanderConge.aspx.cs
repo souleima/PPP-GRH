@@ -15,13 +15,13 @@ namespace PPP_Salaire
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //int id = int.Parse(DropDownList1.SelectedValue);
-            TextBox tx =(TextBox) (this.FormView1.FindControl("CongeIDTextBox"));
+            TextBox tx = (TextBox)(this.FormView1.FindControl("CongeIDTextBox"));
             tx.Text = DropDownList1.SelectedValue;
         }
 
@@ -37,9 +37,18 @@ namespace PPP_Salaire
             }
         }
 
-        protected Boolean IsEnAttente(String Status)
+        protected Boolean IsEnAttente(int Id)
         {
-            return Status.Equals("EN_ATTENTE");
+            var result = employeeDBContext.DemandeConges.SingleOrDefault((dem => dem.Id == Id));
+            Console.WriteLine(result.Status);
+            return result.Status.Equals("EN_ATTENTE");
+        }
+
+        protected void FormView1_DataBound(object sender, EventArgs e)
+        {
+
+            TextBox tx =this.FormView1.FindControl("Employe_IdTextBox") as TextBox;
+            tx.Text = "1";
         }
         //protected void DateDebut_clicked(object sender, EventArgs e)
         //{

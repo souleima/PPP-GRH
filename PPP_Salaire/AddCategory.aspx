@@ -39,17 +39,7 @@
             </asp:FormView>
         
      
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" DeleteCommand="DELETE FROM [Categories] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Categories] ([Nom]) VALUES (@Nom)" SelectCommand="SELECT * FROM [Categories]" UpdateCommand="UPDATE [Categories] SET [Nom] = @Nom WHERE [Id] = @Id">
-                <DeleteParameters>
-                    <asp:Parameter Name="Id" Type="Int32" />
-                </DeleteParameters>
-                <InsertParameters>
-                    <asp:Parameter Name="Nom" Type="String" />
-                </InsertParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="Nom" Type="String" />
-                    <asp:Parameter Name="Id" Type="Int32" />
-                </UpdateParameters>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" SelectCommand="SELECT * FROM [Categories]">
             </asp:SqlDataSource>
         
      

@@ -13,6 +13,9 @@ namespace PPP_Salaire
 {
     public partial class AddCategory : System.Web.UI.Page
     {
-       
+        protected void FormView1_PageIndexChanging(object sender, FormViewPageEventArgs e)
+        {
+
+        }
     }
 }

@@ -19,7 +19,8 @@
 
         <p>
             <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" SelectCommand="SELECT [Nom] FROM [Conges]"></asp:SqlDataSource>
-        <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1" DefaultMode="Insert" RenderOuterTable="true">
+                <p>
+        <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1" DefaultMode="Insert" RenderOuterTable="true" OnDataBound="FormView1_DataBound">
             <EditItemTemplate>
                 DateDebut:
                 <asp:TextBox ID="DateDebutTextBox" runat="server" Text='<%# Bind("DateDebut") %>' />
@@ -134,7 +135,7 @@
                     <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
                     <asp:TemplateField HeaderText="Cancel">
                         <ItemTemplate>
-                            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" Visible='<%# IsEnAttente((String)Eval("Status")) %>'/>
+                            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" Visible='<%# IsEnAttente((int)Eval("Id")) %>'/>
                 <asp:HiddenField ID="HiddenFieldID" runat="server" Value='<%# Eval("Id") %>'/>
                         </ItemTemplate>
                     </asp:TemplateField>

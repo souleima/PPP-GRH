@@ -15,7 +15,6 @@ td {
 }
 table{
     table-layout: fixed;
-    width: 500px;
     border-collapse: collapse;
     border-spacing: 0;
 }

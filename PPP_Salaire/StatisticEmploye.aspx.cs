@@ -7,13 +7,21 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.DataVisualization.Charting;
 using System.Web.UI.WebControls;
+using PPP_Salaire.Entities;
+using PPP_Salaire.Repositories;
 
 namespace PPP_Salaire
 {
-    public partial class StatisticsConge : System.Web.UI.Page
+    public partial class StatisticEmploye : System.Web.UI.Page
     {
+        private EmployeRepository employeRepository = new EmployeRepository();
+        PPPDBContext employeeDBContext = new PPPDBContext();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            string employeId = Request.QueryString["Id"];
+            Employe employe = this.employeRepository.GetById(Convert.ToInt32(employeId));
+            this.SqlDataSource2.SelectCommand = " SELECT* FROM[DemandeConges] where Employe_Id =" + employe.Id;
             if (!IsPostBack)
             {
                 GetChartTypes();
@@ -29,14 +37,11 @@ namespace PPP_Salaire
                 DropDownList1.Items.Add(li);
             }
         }
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            GridViewRow row = this.GridView1.SelectedRow;
-            Response.Redirect("~/StatisticEmploye.aspx?Id=" + row.Cells[1].Text);
-        }
+
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Chart1.Series["Series1"].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), DropDownList1.SelectedValue);
         }
+        
     }
 }

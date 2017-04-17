@@ -11,5 +11,6 @@ namespace PPP_Salaire.Entities
         public DbSet<Conge> Conges { get; set; }
         public DbSet<Employe> Employes { get; set; }
         public DbSet<Categorie> Categories { get; set; }
+        
     }
 }
