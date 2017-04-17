@@ -158,6 +158,9 @@
                                 <li>
                                     <a href="ParametrerSalaire.aspx">Salaire</a>
                                 </li>
+                                <li>
+                                    <a href="ParametrerSalaireV2.aspx">Salaire V2</a>
+                                </li>
                                 <%--<li>
                                     <a href="#">Third Level <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">

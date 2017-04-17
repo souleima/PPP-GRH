@@ -10,6 +10,8 @@ using System.Web.UI.WebControls;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using PPP_Salaire.XMLConfig;
+using System.Reflection;
 
 namespace PPP_Salaire
 {
@@ -18,9 +20,18 @@ namespace PPP_Salaire
         private EmployeRepository employeRepository = new EmployeRepository();
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.LabelDate.Text = DateTime.Now.ToShortDateString();
             string employeId = Request.QueryString["Id"];
             Employe employe = this.employeRepository.GetById(Convert.ToInt32(employeId));
-
+            if (employe == null)
+                Response.Redirect("~/GestionSalaire.aspx");
+            if (employe.Salaire == null)
+            {
+                employe.Salaire = new Salaire();
+                employe.Salaire.Cotisation = new Cotisation();
+                employe.Salaire.Remuneration = new Remuneration();
+            }
+            ViewState["employe"] = employe;
             int gauche_droite = 0;
             foreach (var item in typeof(Employe).GetProperties())
             {
@@ -66,7 +77,8 @@ namespace PPP_Salaire
             {
                 var nomPropriete = item.Name;
                 var valeurPropriete = item.GetValue(employe.Salaire);
-                if (item.PropertyType.Namespace.Equals("System") && (!nomPropriete.Equals("Id")))
+                if (item.PropertyType.Namespace.Equals("System") && (!nomPropriete.Equals("Id"))
+                    && (MyXMLUtilities.GetAttributes(typeof(Salaire).Name).Contains(nomPropriete)))
                 {
                     gauche_droite++;
                     Label lbl_nomPropriete = new Label();
@@ -79,11 +91,19 @@ namespace PPP_Salaire
                     txt_valeurPropriete.Text = valeurPropriete.ToString();
                     txt_valeurPropriete.Attributes.Add("class", "form-control");
 
+
+                    RegularExpressionValidator rv = new RegularExpressionValidator();
+                    rv.ControlToValidate = txt_valeurPropriete.ID;
+                    rv.ErrorMessage = "erreur!!";
+                    rv.ForeColor = System.Drawing.Color.Red;
+                    rv.ValidationExpression = @"(^\d{1,18}\,\d{1,2}$)|(^\d{1,18}$)";
+
                     TableRow tr;
                     TableCell tc1 = new TableCell();
                     TableCell tc2 = new TableCell();
                     tc1.Controls.Add(lbl_nomPropriete);
                     tc2.Controls.Add(txt_valeurPropriete);
+                    tc2.Controls.Add(rv);
                     if (gauche_droite % 2 != 0)
                     {
                         tr = new TableRow();
@@ -104,7 +124,8 @@ namespace PPP_Salaire
             {
                 var nomPropriete = item.Name;
                 var valeurPropriete = item.GetValue(employe.Salaire.Remuneration);
-                if (item.PropertyType.Namespace.Equals("System") && (!nomPropriete.Equals("Id")))
+                if (item.PropertyType.Namespace.Equals("System") && (!nomPropriete.Equals("Id"))
+                    && (MyXMLUtilities.GetAttributes(typeof(Remuneration).Name).Contains(nomPropriete)))
                 {
                     Label lbl_nomPropriete = new Label();
                     lbl_nomPropriete.ID = "lbl_" + typeof(Remuneration) + nomPropriete;
@@ -116,11 +137,18 @@ namespace PPP_Salaire
                     txt_valeurPropriete.Text = valeurPropriete.ToString();
                     txt_valeurPropriete.Attributes.Add("class", "form-control");
 
+                    RegularExpressionValidator rv = new RegularExpressionValidator();
+                    rv.ControlToValidate = txt_valeurPropriete.ID;
+                    rv.ErrorMessage = "erreur!!";
+                    rv.ForeColor = System.Drawing.Color.Red;
+                    rv.ValidationExpression = @"(^\d{1,18}\,\d{1,2}$)|(^\d{1,18}$)";
+
                     TableRow tr = new TableRow();
                     TableCell tc1 = new TableCell();
                     TableCell tc2 = new TableCell();
                     tc1.Controls.Add(lbl_nomPropriete);
                     tc2.Controls.Add(txt_valeurPropriete);
+                    tc2.Controls.Add(rv);
                     tr.Cells.Add(tc1);
                     tr.Cells.Add(tc2);
                     this.TableInfoRemun.Rows.Add(tr);
@@ -132,7 +160,8 @@ namespace PPP_Salaire
             {
                 var nomPropriete = item.Name;
                 var valeurPropriete = item.GetValue(employe.Salaire.Cotisation);
-                if (item.PropertyType.Namespace.Equals("System") && (!nomPropriete.Equals("Id")))
+                if (item.PropertyType.Namespace.Equals("System") && (!nomPropriete.Equals("Id"))
+                    && (MyXMLUtilities.GetAttributes(typeof(Cotisation).Name).Contains(nomPropriete)))
                 {
                     Label lbl_nomPropriete = new Label();
                     lbl_nomPropriete.ID = "lbl_" + typeof(Cotisation) + nomPropriete;
@@ -144,11 +173,18 @@ namespace PPP_Salaire
                     txt_valeurPropriete.Text = valeurPropriete.ToString();
                     txt_valeurPropriete.Attributes.Add("class", "form-control");
 
+                    RegularExpressionValidator rv = new RegularExpressionValidator();
+                    rv.ControlToValidate = txt_valeurPropriete.ID;
+                    rv.ErrorMessage = "erreur!!";
+                    rv.ForeColor = System.Drawing.Color.Red;
+                    rv.ValidationExpression = @"(^\d{1,18}\,\d{1,2}$)|(^\d{1,18}$)";
+
                     TableRow tr = new TableRow();
                     TableCell tc1 = new TableCell();
                     TableCell tc2 = new TableCell();
                     tc1.Controls.Add(lbl_nomPropriete);
                     tc2.Controls.Add(txt_valeurPropriete);
+                    tc2.Controls.Add(rv);
                     tr.Cells.Add(tc1);
                     tr.Cells.Add(tc2);
                     this.TableInfoCotis.Rows.Add(tr);
@@ -158,34 +194,56 @@ namespace PPP_Salaire
 
         protected void BtnCalculerSalaire_Click(object sender, EventArgs e)
         {
-            //appel metier en passant les inputs en parametres
-            //recupération des résultats
-            //et affichage
-            this.LblNetAPayer.Text = 68744.548.ToString();
-            this.LblSalaireBrut.Text = 245484.64848.ToString();
+            string regle = "";
+            IDictionary<int, string>[] dictTab = MyXMLUtilities.GetRegle();
+            IDictionary<int, string> dictSal = dictTab[0];
+            IDictionary<int, string> dictRemun = dictTab[1];
+            IDictionary<int, string> dictCotis = dictTab[2];
+            IDictionary<int, string> dictArith = dictTab[3];
+            for (int i = 0; i < dictSal.Count + dictRemun.Count + dictCotis.Count + dictArith.Count; i++)
+            {
+                KeyValuePair<int, string> kvp = new KeyValuePair<int, string>();
+                kvp = dictSal.Where(x => x.Key == i).FirstOrDefault();
+                if (kvp.Value == null)
+                    kvp = dictRemun.Where(x => x.Key == i).FirstOrDefault();
+                if (kvp.Value == null)
+                    kvp = dictCotis.Where(x => x.Key == i).FirstOrDefault();
+                if (kvp.Value == null)
+                    kvp = dictArith.Where(x => x.Key == i).FirstOrDefault();
+                regle += kvp.Value;
+            }
+            this.LblNetAPayer.Text = regle;
         }
 
         protected void BtnSauvgarder_Click(object sender, EventArgs e)
         {
+            Employe employe = (Employe)ViewState["employe"];
             string inputs = "Salaire<br/>";
             foreach (var item in getInputs(this.TableInfoSalaire, "txt_" + typeof(Salaire)))
             {
                 inputs += item.Key + "= " + item.Value + " ";
+                employe.Salaire.GetType().GetProperty(item.Key)
+                    .SetValue(employe.Salaire, Convert.ToDecimal(item.Value), null);
             }
             this.Label1.Text = inputs;
             inputs = "<br/>Remunerations<br/>";
             foreach (var item in getInputs(this.TableInfoRemun, "txt_" + typeof(Remuneration)))
             {
                 inputs += item.Key + "= " + item.Value + " ";
+                employe.Salaire.Remuneration.GetType().GetProperty(item.Key)
+                    .SetValue(employe.Salaire.Remuneration, Convert.ToDecimal(item.Value), null);
             }
             this.Label2.Text = inputs;
             inputs = "<br/>Cotisations<br/>";
             foreach (var item in getInputs(this.TableInfoCotis, "txt_" + typeof(Cotisation)))
             {
                 inputs += item.Key + "= " + item.Value + " ";
+                employe.Salaire.Cotisation.GetType().GetProperty(item.Key)
+                    .SetValue(employe.Salaire.Cotisation, Convert.ToDecimal(item.Value), null);
+
             }
             this.Label3.Text = inputs;
-            //appel metier en passant les inputs en parametres
+            this.employeRepository.Update(employe);
         }
 
         protected void BtnImprimer_Click(object sender, EventArgs e)
@@ -205,7 +263,7 @@ namespace PPP_Salaire
             var bodyFont = FontFactory.GetFont("Arial", 12, Font.NORMAL);
 
             document.Add(new Paragraph("Fiche de paie", titleFont));
-            document.Add(new Paragraph(this.DropDownListMois.SelectedItem.Text));
+            document.Add(new Paragraph(DateTime.Now.ToShortDateString()));
 
             PdfPTable pdfTable = new PdfPTable(4);
             pdfTable.SpacingBefore = 10;
@@ -300,20 +358,15 @@ namespace PPP_Salaire
             pdfBilanTable.AddCell(pdfCotis);
             document.Add(pdfBilanTable);
 
-            document.Add(new Paragraph("salaire brut : " + this.LblSalaireBrut.Text));
+
             document.Add(new Paragraph("Net a payer : " + this.LblNetAPayer.Text));
-         
+
 
             document.Close();
 
             Response.ContentType = "application/pdf";
             Response.AddHeader("Content-Disposition", string.Format("attachment;filename=salaire.pdf"));
             Response.BinaryWrite(output.ToArray());
-        }
-
-        protected void BtnRetour_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/GestionSalaire.aspx");
         }
 
         private Dictionary<string, string> getInputs(Control control, string entityName)
