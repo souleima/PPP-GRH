@@ -22,19 +22,22 @@
                 Formulaire Ajout Conges
             </div>
             <div class="panel-body">
-        <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1" DefaultMode="Insert" CellPadding="4" ForeColor="#333333">
+        <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1" DefaultMode="Insert" CellPadding="4" ForeColor="#333333" DataKeyNames="Id">
             <EditItemTemplate>
+                Id:
+                <asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>' />
+                <br />
                 Nom:
                 <asp:TextBox ID="NomTextBox" runat="server" Text='<%# Bind("Nom") %>' />
                 <br />
                 NbJours:
                 <asp:TextBox ID="NbJoursTextBox" runat="server" Text='<%# Bind("NbJours") %>' />
                 <br />
-                Justifié:
-                <asp:TextBox ID="JustifiéTextBox" runat="server" Text='<%# Bind("Justifié") %>' />
-                <br />
                 Par_Jours_De_Travail:
                 <asp:TextBox ID="Par_Jours_De_TravailTextBox" runat="server" Text='<%# Bind("Par_Jours_De_Travail") %>' />
+                <br />
+                Justifié:
+                <asp:TextBox ID="JustifiéTextBox" runat="server" Text='<%# Bind("Justifié") %>' />
                 <br />
                 <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Mettre à jour" />
                 &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Annuler" />
@@ -49,28 +52,35 @@
                 NbJours:
                 <asp:TextBox ID="NbJoursTextBox" runat="server" Text='<%# Bind("NbJours") %>' />
                 <br />
-                Justifié:
-                <asp:TextBox ID="JustifiéTextBox" runat="server" Text='<%# Bind("Justifié") %>' />
-                <br />
                 Par_Jours_De_Travail:
                 <asp:TextBox ID="Par_Jours_De_TravailTextBox" runat="server" Text='<%# Bind("Par_Jours_De_Travail") %>' />
+                <br />
+                Justifié:
+                <asp:TextBox ID="JustifiéTextBox" runat="server" Text='<%# Bind("Justifié") %>' />
                 <br />
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insérer" />
                 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Annuler" />
             </InsertItemTemplate>
             <ItemTemplate>
+                Id:
+                <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
+                <br />
                 Nom:
                 <asp:Label ID="NomLabel" runat="server" Text='<%# Bind("Nom") %>' />
                 <br />
                 NbJours:
                 <asp:Label ID="NbJoursLabel" runat="server" Text='<%# Bind("NbJours") %>' />
                 <br />
-                Justifié:
-                <asp:Label ID="JustifiéLabel" runat="server" Text='<%# Bind("Justifié") %>' />
-                <br />
                 Par_Jours_De_Travail:
                 <asp:Label ID="Par_Jours_De_TravailLabel" runat="server" Text='<%# Bind("Par_Jours_De_Travail") %>' />
                 <br />
+                Justifié:
+                <asp:Label ID="JustifiéLabel" runat="server" Text='<%# Bind("Justifié") %>' />
+                <br />
+
+                <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Modifier" />
+                &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Supprimer" />
+                &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Nouveau" />
 
             </ItemTemplate>
             <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
@@ -83,7 +93,24 @@
                 Conges Ajouté à la base de donnée : 
             </div>
             <div class="panel-body">
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" SelectCommand="SELECT DISTINCT [Nom], [NbJours], [Justifié], [Par_Jours_De_Travail] FROM [Conges]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" SelectCommand="SELECT * FROM [Conges]" DeleteCommand="DELETE FROM [Conges] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Conges] ([Nom], [NbJours], [Par_Jours_De_Travail], [Justifié]) VALUES (@Nom, @NbJours, @Par_Jours_De_Travail, @Justifié)" UpdateCommand="UPDATE [Conges] SET [Nom] = @Nom, [NbJours] = @NbJours, [Par_Jours_De_Travail] = @Par_Jours_De_Travail, [Justifié] = @Justifié WHERE [Id] = @Id">
+            <DeleteParameters>
+                <asp:Parameter Name="Id" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="Nom" Type="String" />
+                <asp:Parameter Name="NbJours" Type="Int32" />
+                <asp:Parameter Name="Par_Jours_De_Travail" Type="Int32" />
+                <asp:Parameter Name="Justifié" Type="Int32" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="Nom" Type="String" />
+                <asp:Parameter Name="NbJours" Type="Int32" />
+                <asp:Parameter Name="Par_Jours_De_Travail" Type="Int32" />
+                <asp:Parameter Name="Justifié" Type="Int32" />
+                <asp:Parameter Name="Id" Type="Int32" />
+            </UpdateParameters>
+                </asp:SqlDataSource>
         <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource2" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover" 
             >
             <AlternatingRowStyle BackColor="White" />

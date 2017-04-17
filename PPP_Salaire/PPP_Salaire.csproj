@@ -295,6 +295,10 @@
     <Compile Include="Migrations\201704170742503_CongeRectifie.Designer.cs">
       <DependentUpon>201704170742503_CongeRectifie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704171040248_TestMerging.cs" />
+    <Compile Include="Migrations\201704171040248_TestMerging.Designer.cs">
+      <DependentUpon>201704171040248_TestMerging.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ParametrerConge.aspx.cs">
       <DependentUpon>ParametrerConge.aspx</DependentUpon>
@@ -367,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704170742503_CongeRectifie.resx">
       <DependentUpon>201704170742503_CongeRectifie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704171040248_TestMerging.resx">
+      <DependentUpon>201704171040248_TestMerging.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParametrerSalaire.aspx.resx">
       <DependentUpon>ParametrerSalaire.aspx.cs</DependentUpon>

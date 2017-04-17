@@ -42,6 +42,6 @@ namespace PPP_Salaire
         {
             Chart1.Series["Series1"].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), DropDownList1.SelectedValue);
         }
-        
+
     }
 }
