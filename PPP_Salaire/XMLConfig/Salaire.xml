@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Salaire>
+  <ByDefaults>
+    <ByDefault>Salaire_de_base</ByDefault>
+    <ByDefault>Heures_travaillées</ByDefault>
+  </ByDefaults>
+  <CheckedAttributes></CheckedAttributes>
+</Salaire>
