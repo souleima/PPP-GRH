@@ -12,6 +12,7 @@ using iTextSharp.text.pdf;
 using System.IO;
 using PPP_Salaire.XMLConfig;
 using System.Reflection;
+using System.Data;
 
 namespace PPP_Salaire
 {
@@ -202,51 +203,78 @@ namespace PPP_Salaire
             IDictionary<int, string> dictArith = dictTab[3];
             for (int i = 0; i < dictSal.Count + dictRemun.Count + dictCotis.Count + dictArith.Count; i++)
             {
+                string valeur = "";
                 KeyValuePair<int, string> kvp = new KeyValuePair<int, string>();
                 kvp = dictSal.Where(x => x.Key == i).FirstOrDefault();
-                if (kvp.Value == null)
+                if (kvp.Value != null)
+                {
+                    valeur = getInputs(this.TableInfoSalaire, "txt_" + typeof(Salaire))
+                        [kvp.Value.Replace(" ", "_")];
+                }
+                else
+                {
                     kvp = dictRemun.Where(x => x.Key == i).FirstOrDefault();
-                if (kvp.Value == null)
-                    kvp = dictCotis.Where(x => x.Key == i).FirstOrDefault();
-                if (kvp.Value == null)
-                    kvp = dictArith.Where(x => x.Key == i).FirstOrDefault();
-                regle += kvp.Value;
+                    if (kvp.Value != null)
+                    {
+                        valeur = getInputs(this.TableInfoRemun, "txt_" + typeof(Remuneration))
+                        [kvp.Value.Replace(" ", "_")];
+                    }
+                    else
+                    {
+                        kvp = dictCotis.Where(x => x.Key == i).FirstOrDefault();
+                        if (kvp.Value != null)
+                        {
+                            valeur = getInputs(this.TableInfoCotis, "txt_" + typeof(Cotisation))
+                        [kvp.Value.Replace(" ", "_")];
+                        }
+                        else
+                        {
+                            kvp = dictArith.Where(x => x.Key == i).FirstOrDefault();
+                            valeur = kvp.Value;
+                        }
+                    }
+                }
+
+                regle += valeur;
             }
-            this.LblNetAPayer.Text = regle;
+            DataTable dt = new DataTable();
+            string v = "";
+            try
+            {
+                v = dt.Compute(regle.Replace(",", "."), "").ToString();
+            }
+            catch (SyntaxErrorException)
+            {
+                v = "erreur de calcul !!";
+            }
+            this.LblNetAPayer.Text = v.ToString();
+
         }
 
         protected void BtnSauvgarder_Click(object sender, EventArgs e)
         {
             Employe employe = (Employe)ViewState["employe"];
-            string inputs = "Salaire<br/>";
             foreach (var item in getInputs(this.TableInfoSalaire, "txt_" + typeof(Salaire)))
             {
-                inputs += item.Key + "= " + item.Value + " ";
                 employe.Salaire.GetType().GetProperty(item.Key)
                     .SetValue(employe.Salaire, Convert.ToDecimal(item.Value), null);
             }
-            this.Label1.Text = inputs;
-            inputs = "<br/>Remunerations<br/>";
             foreach (var item in getInputs(this.TableInfoRemun, "txt_" + typeof(Remuneration)))
             {
-                inputs += item.Key + "= " + item.Value + " ";
                 employe.Salaire.Remuneration.GetType().GetProperty(item.Key)
                     .SetValue(employe.Salaire.Remuneration, Convert.ToDecimal(item.Value), null);
             }
-            this.Label2.Text = inputs;
-            inputs = "<br/>Cotisations<br/>";
             foreach (var item in getInputs(this.TableInfoCotis, "txt_" + typeof(Cotisation)))
             {
-                inputs += item.Key + "= " + item.Value + " ";
                 employe.Salaire.Cotisation.GetType().GetProperty(item.Key)
                     .SetValue(employe.Salaire.Cotisation, Convert.ToDecimal(item.Value), null);
 
             }
-            this.Label3.Text = inputs;
             this.employeRepository.Update(employe);
+            imprimer();
         }
 
-        protected void BtnImprimer_Click(object sender, EventArgs e)
+        private void imprimer()
         {
             var document = new Document(PageSize.A4, 50, 50, 25, 25);
 
@@ -290,23 +318,23 @@ namespace PPP_Salaire
             document.Add(pdfTable);
 
 
-            document.Add(new Paragraph("tab_calc_sal", subTitleFont));
+
 
             PdfPTable pdfSalaire = new PdfPTable(4);
             pdfSalaire.SpacingBefore = 10;
             pdfSalaire.DefaultCell.Padding = 5;
             pdfSalaire.WidthPercentage = 100;
             pdfSalaire.HorizontalAlignment = Element.ALIGN_LEFT;
-            pdfSalaire.DefaultCell.Border = Rectangle.NO_BORDER;
+            pdfSalaire.DefaultCell.BorderWidth = 1;
             pdfSalaire.SetWidths(new int[] { 4, 1, 4, 1 });
 
             foreach (var item in getInputs(this.TableInfoSalaire, "txt_" + typeof(Salaire)))
             {
                 PdfPCell cell = new PdfPCell(new Phrase(item.Key.Replace("_", " ") + " :", boldTableFont));
-                cell.Border = Rectangle.NO_BORDER;
+                //cell.Border = Rectangle.NO_BORDER;
                 pdfSalaire.AddCell(cell);
                 cell = new PdfPCell(new Phrase(item.Value));
-                cell.Border = Rectangle.NO_BORDER;
+                //cell.Border = Rectangle.NO_BORDER;
                 pdfSalaire.AddCell(cell);
             }
 
@@ -336,20 +364,20 @@ namespace PPP_Salaire
             foreach (var item in getInputs(this.TableInfoRemun, "txt_" + typeof(Remuneration)))
             {
                 PdfPCell cell = new PdfPCell(new Phrase(item.Key.Replace("_", " ") + " :", boldTableFont));
-                cell.Border = Rectangle.NO_BORDER;
+                //cell.Border = Rectangle.NO_BORDER;
                 pdfRemun.AddCell(cell);
                 cell = new PdfPCell(new Phrase(item.Value));
-                cell.Border = Rectangle.NO_BORDER;
+                //cell.Border = Rectangle.NO_BORDER;
                 pdfRemun.AddCell(cell);
             }
 
             foreach (var item in getInputs(this.TableInfoCotis, "txt_" + typeof(Cotisation)))
             {
                 PdfPCell cell = new PdfPCell(new Phrase(item.Key.Replace("_", " ") + " :", boldTableFont));
-                cell.Border = Rectangle.NO_BORDER;
+                //cell.Border = Rectangle.NO_BORDER;
                 pdfCotis.AddCell(cell);
                 cell = new PdfPCell(new Phrase(item.Value));
-                cell.Border = Rectangle.NO_BORDER;
+                //cell.Border = Rectangle.NO_BORDER;
                 pdfCotis.AddCell(cell);
             }
 

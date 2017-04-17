@@ -2,95 +2,118 @@
 
 
 <asp:Content ContentPlaceHolderID="headPlaceHolder" runat="server">
-</asp:Content>
+    <style>
+        td {
+            border-right: 1px solid #C1DAD7;
+            border-bottom: 1px solid #C1DAD7;
+            background: #fff;
+            padding: 0;
+            color: #6D929B;
+        }
 
-<asp:Content ContentPlaceHolderID="pageTiltleHolder" runat="server">
-    Gestion Salaire Employe
-</asp:Content>
+        table {
+            table-layout: fixed;
+            width: 500px;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
 
-<asp:Content ContentPlaceHolderID="PppContentPlaceHolder" runat="server">
+            table td {
+                width: 75px;
+            }
+    </style>
+    </asp:Content>
 
-    <form id="form1" runat="server">
+    <asp:Content ContentPlaceHolderID="pageTiltleHolder" runat="server">
+        Gestion Salaire Employe
+    </asp:Content>
 
-        <br />
-        <div>
-            <style>
-                .tt {
-                    border-spacing: 10px;
-                    border-collapse: separate;
-                    width: 100% !important;
-                    margin: auto;
-                }
-            </style>
+    <asp:Content ContentPlaceHolderID="PppContentPlaceHolder" runat="server">
 
-            <div class="panel panel-danger">
+        <form id="form1" runat="server">
 
-                <div class="panel-body">
-                    <asp:Table ID="TableInfoEmploye" runat="server" CssClass="tt">
-                    </asp:Table>   
-                    <asp:Label ID="LabelDate" runat="server"></asp:Label>
-                </div>
-            </div>
-        </div>
+            <br />
+            <div>
+                <style>
+                    .tt {
+                        border-spacing: 10px;
+                        border-collapse: separate;
+                        width: 100% !important;
+                        margin: auto;
+                    }
+                </style>
 
-        <br />
+    <div class="panel panel-danger">
 
-        <div>
-            <asp:Table ID="TableInfoSalaire" runat="server" CssClass="table">
+        <div class="panel-body">
+            <asp:Table ID="TableInfoEmploye" runat="server" CssClass="tt">
             </asp:Table>
+            <asp:Label ID="LabelDate" runat="server"></asp:Label>
         </div>
-        <br />
+    </div>
+    </div>
+
         <br />
 
+    <div>
+        <asp:Table ID="TableInfoSalaire" runat="server" CssClass="table">
+        </asp:Table>
+    </div>
+    <br />
+    <br />
 
-        <table class="table">
+
+    <table class="table">
+        <tr>
+            <th>
+                <h4>Rémunérations</h4>
+            </th>
+            <th>
+                <h4>Cotisations</h4>
+            </th>
+        </tr>
+        <tr>
+            <td style="vertical-align: top">
+                <asp:Table ID="TableInfoRemun" runat="server" CssClass="table">
+                </asp:Table>
+            </td>
+            <td style="vertical-align: top">
+                <asp:Table ID="TableInfoCotis" runat="server" CssClass="table">
+                </asp:Table>
+            </td>
+        </tr>
+        <tfoot>
             <tr>
-                <th>
-                    <h4>Rémunérations</h4>
-                </th>
-                <th>
-                    <h4>Cotisations</h4>
-                </th>
-            </tr>
-            <tr>
-                <td style="vertical-align: top">
-                    <asp:Table ID="TableInfoRemun" runat="server" CssClass="table">
-                    </asp:Table>
+                <td>
+                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <contenttemplate>
+                                <asp:Label Text="Net a payer =" runat="server"></asp:Label>
+                                <asp:Label ID="LblNetAPayer" Text="0" runat="server"></asp:Label>
+                            </contenttemplate>
+                        <triggers>
+                                <asp:AsyncPostBackTrigger ControlID="BtnCalculerSalaire" EventName="Click" />
+                            </triggers>
+                    </asp:UpdatePanel>
                 </td>
-                <td style="vertical-align: top">
-                    <asp:Table ID="TableInfoCotis" runat="server" CssClass="table">
-                    </asp:Table>
+                <td>
+                    <asp:Button ID="BtnCalculerSalaire" runat="server" Text="Calculer Salaire"
+                        OnClick="BtnCalculerSalaire_Click" CssClass="btn btn-info" />
+                    <asp:Button ID="BtnSauvgarder" runat="server" Text="Sauvgarder"
+                        OnClick="BtnSauvgarder_Click" CssClass="btn btn-success" />
+                    <a href="GestionSalaire.aspx" class="btn btn-default">Retour</a>
                 </td>
-            </tr>
-            <tfoot>
-                <tr>
-                    <td>
-                        <asp:Label Text="Salaire brut =" runat="server"></asp:Label>
-                        <asp:Label ID="LblSalaireBrut" Text="0" runat="server"></asp:Label>
-                        <asp:Label Text="Net a payer =" runat="server"></asp:Label>
-                        <asp:Label ID="LblNetAPayer" Text="0" runat="server"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:Button ID="BtnCalculerSalaire" runat="server" Text="Calculer Salaire"
-                            OnClick="BtnCalculerSalaire_Click" CssClass="btn btn-info" />
-                        <asp:Button ID="BtnSauvgarder" runat="server" Text="Sauvgarder"
-                            OnClick="BtnSauvgarder_Click" CssClass="btn btn-success" />
-                        <asp:Button ID="BtnImprimer" runat="server" Text="Imprimer"
-                            OnClick="BtnImprimer_Click" CssClass="btn btn-primary" />
-                        <a href="GestionSalaire.aspx" class="btn btn-default">Retour</a>                    </td>
-                </tr>
-            </tfoot>
-        </table>
 
 
-        <br />
+
+
+            </tr>
+        </tfoot>
+    </table>
+
+
+    <br />
 
     </form>
-
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-    <br />
-    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-    <br />
-    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
 
 </asp:Content>

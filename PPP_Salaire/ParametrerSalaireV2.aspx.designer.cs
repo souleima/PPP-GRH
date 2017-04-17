@@ -112,6 +112,24 @@ namespace PPP_Salaire {
         protected global::System.Web.UI.WebControls.Button BtnSaisirRegle;
         
         /// <summary>
+        /// PanelCalc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PanelCalc;
+        
+        /// <summary>
+        /// goregle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl goregle;
+        
+        /// <summary>
         /// DivKeys control.
         /// </summary>
         /// <remarks>
@@ -202,6 +220,15 @@ namespace PPP_Salaire {
         protected global::System.Web.UI.WebControls.Button btn_pf;
         
         /// <summary>
+        /// btn_mult control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_mult;
+        
+        /// <summary>
         /// btn_7 control.
         /// </summary>
         /// <remarks>
@@ -274,15 +301,6 @@ namespace PPP_Salaire {
         protected global::System.Web.UI.WebControls.Button btn_div;
         
         /// <summary>
-        /// btn_mult control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_mult;
-        
-        /// <summary>
         /// BtnSauvgarder control.
         /// </summary>
         /// <remarks>
@@ -290,6 +308,24 @@ namespace PPP_Salaire {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnSauvgarder;
+        
+        /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
         /// ExpressionDiv control.

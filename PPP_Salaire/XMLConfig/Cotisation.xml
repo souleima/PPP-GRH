@@ -2,8 +2,16 @@
 <Cotisation>
   <ByDefaults></ByDefaults>
   <CheckedAttributes>
+    <CheckedAttribute>Cotisations_Urssaf</CheckedAttribute>
     <CheckedAttribute>Cotisations_AGFF</CheckedAttribute>
     <CheckedAttribute>Cotisations_APEC</CheckedAttribute>
+    <CheckedAttribute>Cotisations_prévoyance</CheckedAttribute>
+    <CheckedAttribute>Cotisations_mutuelle</CheckedAttribute>
+    <CheckedAttribute>Cotisations_retraite_supplémentaire</CheckedAttribute>
     <CheckedAttribute>Cotisation_CSG_déductible</CheckedAttribute>
+    <CheckedAttribute>Cotisation_CSG_non_déductible</CheckedAttribute>
+    <CheckedAttribute>Cotisation_CRDS</CheckedAttribute>
+    <CheckedAttribute>Acomptes_sur_salaire</CheckedAttribute>
+    <CheckedAttribute>Titres_restaurant</CheckedAttribute>
   </CheckedAttributes>
 </Cotisation>
