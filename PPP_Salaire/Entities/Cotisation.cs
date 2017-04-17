@@ -5,6 +5,7 @@ using System.Web;
 
 namespace PPP_Salaire.Entities
 {
+    [Serializable]//to store it in the viewstate
     public class Cotisation
     {
         public int Id { get; set; }

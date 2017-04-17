@@ -6,6 +6,7 @@ using System.Web;
 
 namespace PPP_Salaire.Entities
 {
+    [Serializable]//to store it in the viewstate
     public class Employe
     {
         public int Id { get; set; }
@@ -15,7 +16,7 @@ namespace PPP_Salaire.Entities
         public int Num_SS { get; set; }
         public DateTime Date_dEmbauche { get; set; }
 
-        public Salaire Salaire { get; set; }
+        public  virtual Salaire Salaire { get; set; }
         public List<DemandeConge> DemandeConges { get; set; }
     }
 }
