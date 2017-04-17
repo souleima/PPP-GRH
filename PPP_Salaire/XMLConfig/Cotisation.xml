@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Cotisation>
+  <ByDefaults></ByDefaults>
+  <CheckedAttributes>
+    <CheckedAttribute>Cotisations_AGFF</CheckedAttribute>
+    <CheckedAttribute>Cotisations_APEC</CheckedAttribute>
+    <CheckedAttribute>Cotisation_CSG_déductible</CheckedAttribute>
+  </CheckedAttributes>
+</Cotisation>

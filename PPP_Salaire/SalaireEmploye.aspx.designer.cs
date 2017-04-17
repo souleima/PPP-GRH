@@ -31,13 +31,13 @@ namespace PPP_Salaire {
         protected global::System.Web.UI.WebControls.Table TableInfoEmploye;
         
         /// <summary>
-        /// DropDownListMois control.
+        /// LabelDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListMois;
+        protected global::System.Web.UI.WebControls.Label LabelDate;
         
         /// <summary>
         /// TableInfoSalaire control.
@@ -110,15 +110,6 @@ namespace PPP_Salaire {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnImprimer;
-        
-        /// <summary>
-        /// BtnRetour control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnRetour;
         
         /// <summary>
         /// Label1 control.

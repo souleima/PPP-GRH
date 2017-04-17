@@ -18,6 +18,8 @@
                 .tt {
                     border-spacing: 10px;
                     border-collapse: separate;
+                    width: 100% !important;
+                    margin: auto;
                 }
             </style>
 
@@ -25,22 +27,8 @@
 
                 <div class="panel-body">
                     <asp:Table ID="TableInfoEmploye" runat="server" CssClass="tt">
-                    </asp:Table>
-
-                    <asp:DropDownList ID="DropDownListMois" runat="server" CssClass="form-control" Width="10%">
-                        <asp:ListItem>Janvier</asp:ListItem>
-                        <asp:ListItem>Février</asp:ListItem>
-                        <asp:ListItem>Mars</asp:ListItem>
-                        <asp:ListItem>Avril</asp:ListItem>
-                        <asp:ListItem>Mai</asp:ListItem>
-                        <asp:ListItem>Juin</asp:ListItem>
-                        <asp:ListItem>Juillet</asp:ListItem>
-                        <asp:ListItem>Aout</asp:ListItem>
-                        <asp:ListItem>Septembre</asp:ListItem>
-                        <asp:ListItem>Octobre</asp:ListItem>
-                        <asp:ListItem>Novembre</asp:ListItem>
-                        <asp:ListItem>Décembre</asp:ListItem>
-                    </asp:DropDownList>
+                    </asp:Table>   
+                    <asp:Label ID="LabelDate" runat="server"></asp:Label>
                 </div>
             </div>
         </div>
@@ -89,9 +77,7 @@
                             OnClick="BtnSauvgarder_Click" CssClass="btn btn-success" />
                         <asp:Button ID="BtnImprimer" runat="server" Text="Imprimer"
                             OnClick="BtnImprimer_Click" CssClass="btn btn-primary" />
-                        <asp:Button ID="BtnRetour" runat="server" Text="Retour"
-                            OnClick="BtnRetour_Click" CssClass="btn btn-default" />
-                    </td>
+                        <a href="GestionSalaire.aspx" class="btn btn-default">Retour</a>                    </td>
                 </tr>
             </tfoot>
         </table>

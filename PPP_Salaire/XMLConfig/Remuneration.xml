@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Remuneration>
+  <ByDefaults>
+    <ByDefault>Remboursement_transports_en_commun</ByDefault>
+  </ByDefaults>
+  <CheckedAttributes>
+    <CheckedAttribute>Primes_éventuelles</CheckedAttribute>
+  </CheckedAttributes>
+</Remuneration>

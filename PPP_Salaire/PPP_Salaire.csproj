@@ -146,7 +146,6 @@
     <Content Include="GestionConge.aspx" />
     <Content Include="GestionEmploye.aspx" />
     <Content Include="packages.config" />
-    <Content Include="ParametrerConge.aspx" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Content\MyCss.less" />
     <Content Include="pppMaster.Master" />
@@ -163,6 +162,10 @@
     <Content Include="AdminTempL\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="AdminTempL\LICENSE" />
     <Content Include="AdminTempL\README.md" />
+    <Content Include="XMLConfig\Cotisation.xml" />
+    <Content Include="XMLConfig\regle.xml" />
+    <Content Include="XMLConfig\Remuneration.xml" />
+    <Content Include="XMLConfig\Salaire.xml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -263,6 +266,10 @@
     <Compile Include="GestionSalaire.aspx.designer.cs">
       <DependentUpon>GestionSalaire.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704161943060_intToDecimalSalaire.cs" />
+    <Compile Include="Migrations\201704161943060_intToDecimalSalaire.Designer.cs">
+      <DependentUpon>201704161943060_intToDecimalSalaire.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201704161822084_Conge.cs" />
     <Compile Include="Migrations\201704161822084_Conge.Designer.cs">
       <DependentUpon>201704161822084_Conge.cs</DependentUpon>
@@ -310,6 +317,13 @@
     <Compile Include="ParametrerSalaire.aspx.designer.cs">
       <DependentUpon>ParametrerSalaire.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ParametrerSalaireV2.aspx.cs">
+      <DependentUpon>ParametrerSalaireV2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ParametrerSalaireV2.aspx.designer.cs">
+      <DependentUpon>ParametrerSalaireV2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pppMaster.Master.cs">
       <DependentUpon>pppMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -342,8 +356,12 @@
       <DependentUpon>StatisticsConge.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\LiteralControlUtility.cs" />
+    <Compile Include="XMLConfig\MyXMLUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704161943060_intToDecimalSalaire.resx">
+      <DependentUpon>201704161943060_intToDecimalSalaire.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704161822084_Conge.resx">
       <DependentUpon>201704161822084_Conge.cs</DependentUpon>
     </EmbeddedResource>
