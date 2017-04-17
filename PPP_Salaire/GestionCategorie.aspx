@@ -16,8 +16,8 @@
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
-                <asp:BoundField DataField="label" HeaderText="label" SortExpression="label" />
+                <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" InsertVisible="False" />
+                <asp:BoundField DataField="Nom" HeaderText="Nom" SortExpression="Nom" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -31,16 +31,15 @@
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
     
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" DeleteCommand="DELETE FROM [Category] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Category] ([Id], [label]) VALUES (@Id, @label)" SelectCommand="SELECT * FROM [Category]" UpdateCommand="UPDATE [Category] SET [label] = @label WHERE [Id] = @Id">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" DeleteCommand="DELETE FROM [Categories] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Categories] ([Nom]) VALUES (@Nom)" SelectCommand="SELECT [Id], [Nom] FROM [Categories]" UpdateCommand="UPDATE [Categories] SET [Nom] = @Nom WHERE [Id] = @Id">
             <DeleteParameters>
                 <asp:Parameter Name="Id" Type="Int32" />
             </DeleteParameters>
             <InsertParameters>
-                <asp:Parameter Name="Id" Type="Int32" />
-                <asp:Parameter Name="label" Type="String" />
+                <asp:Parameter Name="Nom" Type="String" />
             </InsertParameters>
             <UpdateParameters>
-                <asp:Parameter Name="label" Type="String" />
+                <asp:Parameter Name="Nom" Type="String" />
                 <asp:Parameter Name="Id" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
