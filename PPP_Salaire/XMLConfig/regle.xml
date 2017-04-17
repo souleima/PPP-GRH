@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<regle />
+<regle>
+  <Arithmetique>3</Arithmetique>
+  <Arithmetique>5</Arithmetique>
+  <Arithmetique>6</Arithmetique>
+</regle>

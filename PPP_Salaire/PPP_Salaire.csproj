@@ -336,6 +336,7 @@
       <DependentUpon>pppMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CongeRepository.cs" />
     <Compile Include="Repositories\EmployeRepository.cs" />
     <Compile Include="Repositories\IEmployeRepository.cs" />
     <Compile Include="SalaireEmploye.aspx.cs">
