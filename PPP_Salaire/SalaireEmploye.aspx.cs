@@ -49,7 +49,7 @@ namespace PPP_Salaire
 
                     Label lbl_valeurPropriete = new Label();
                     lbl_valeurPropriete.ID = "txt_" + typeof(Employe) + nomPropriete;
-                    lbl_valeurPropriete.Text = valeurPropriete.ToString();
+                    lbl_valeurPropriete.Text = valeurPropriete?.ToString();
 
                     TableRow tr;
                     TableCell tc1 = new TableCell();

@@ -138,6 +138,7 @@
     <Content Include="AdminTempL\js\startmin.js" />
     <Content Include="AdminTempL\TEMPLATE.html" />
     <Content Include="CongeEmploye.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="DemanderConge.aspx" />
     <Content Include="GestionCategorie.aspx" />
     <Content Include="GestionConge.aspx" />
@@ -219,6 +220,13 @@
     </Compile>
     <Compile Include="CongeEmploye.aspx.designer.cs">
       <DependentUpon>CongeEmploye.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="DemanderConge.aspx.cs">
       <DependentUpon>DemanderConge.aspx</DependentUpon>
