@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 namespace PPP_Salaire.Entities
 {
-    public class PPPDBContext : DbContext
+    public class DBContext : DbContext
     {
         public DbSet<DemandeConge> DemandeConges { get; set; }
         public DbSet<Conge> Conges { get; set; }

@@ -7,13 +7,13 @@ namespace PPP_Salaire.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Categorie : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Categorie));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201704161837091_Categorie"; }
+            get { return "201704181146188_Initial"; }
         }
         
         string IMigrationMetadata.Source

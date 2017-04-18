@@ -232,7 +232,7 @@
     <Compile Include="Entities\Cotisation.cs" />
     <Compile Include="Entities\DemandeConge.cs" />
     <Compile Include="Entities\Employe.cs" />
-    <Compile Include="Entities\PPPDBContext.cs" />
+    <Compile Include="Entities\DBContext.cs" />
     <Compile Include="Entities\Remuneration.cs" />
     <Compile Include="Entities\Salaire.cs" />
     <Compile Include="GestionCategorie.aspx.cs">
@@ -263,25 +263,9 @@
     <Compile Include="GestionSalaire.aspx.designer.cs">
       <DependentUpon>GestionSalaire.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704161943060_intToDecimalSalaire.cs" />
-    <Compile Include="Migrations\201704161943060_intToDecimalSalaire.Designer.cs">
-      <DependentUpon>201704161943060_intToDecimalSalaire.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704161822084_Conge.cs" />
-    <Compile Include="Migrations\201704161822084_Conge.Designer.cs">
-      <DependentUpon>201704161822084_Conge.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704161837091_Categorie.cs" />
-    <Compile Include="Migrations\201704161837091_Categorie.Designer.cs">
-      <DependentUpon>201704161837091_Categorie.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704161838168_Categorie1.cs" />
-    <Compile Include="Migrations\201704161838168_Categorie1.Designer.cs">
-      <DependentUpon>201704161838168_Categorie1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704172156003_AddingSomeSalaireGenericAttributs.cs" />
-    <Compile Include="Migrations\201704172156003_AddingSomeSalaireGenericAttributs.Designer.cs">
-      <DependentUpon>201704172156003_AddingSomeSalaireGenericAttributs.cs</DependentUpon>
+    <Compile Include="Migrations\201704181146188_Initial.cs" />
+    <Compile Include="Migrations\201704181146188_Initial.Designer.cs">
+      <DependentUpon>201704181146188_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ParametrerSalaire.aspx.cs">
@@ -326,20 +310,8 @@
     <Compile Include="XMLConfig\MyXMLUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704161943060_intToDecimalSalaire.resx">
-      <DependentUpon>201704161943060_intToDecimalSalaire.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704161822084_Conge.resx">
-      <DependentUpon>201704161822084_Conge.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704161837091_Categorie.resx">
-      <DependentUpon>201704161837091_Categorie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704161838168_Categorie1.resx">
-      <DependentUpon>201704161838168_Categorie1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704172156003_AddingSomeSalaireGenericAttributs.resx">
-      <DependentUpon>201704172156003_AddingSomeSalaireGenericAttributs.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704181146188_Initial.resx">
+      <DependentUpon>201704181146188_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParametrerSalaire.aspx.resx">
       <DependentUpon>ParametrerSalaire.aspx.cs</DependentUpon>

@@ -9,7 +9,7 @@ namespace PPP_Salaire.Repositories
 {
     public class EmployeRepository : IEmployeRepository
     {
-        PPPDBContext db = new PPPDBContext();
+        DBContext db = new DBContext();
 
         public IList<Employe> Lister()
         {
@@ -30,13 +30,13 @@ namespace PPP_Salaire.Repositories
 
         public List<Employe> GetEmployes()
         {
-            PPPDBContext employeeDBContext = new PPPDBContext();
+            DBContext employeeDBContext = new DBContext();
             return employeeDBContext.Employes.Include("DemandeConges").ToList();
         }
 
         public List<DemandeConge> GetDemandeConges()
         {
-            PPPDBContext employeeDBContext = new PPPDBContext();
+            DBContext employeeDBContext = new DBContext();
             return employeeDBContext.DemandeConges.ToList();
         }
     }

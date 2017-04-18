@@ -12,7 +12,7 @@ namespace PPP_Salaire.Entities
         public decimal Salaire_de_base { get; set; }
         public decimal Heures_travaillées { get; set; }
         public decimal Heures_retards { get; set; }
-        public decimal Heures_supplementaires { get; set; }
+        public decimal Heures_supplementaire { get; set; }
 
         public virtual Remuneration Remuneration { get; set; }
         public virtual Cotisation Cotisation { get; set; }

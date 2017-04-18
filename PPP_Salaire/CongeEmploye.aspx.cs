@@ -13,7 +13,7 @@ namespace PPP_Salaire
     {
 
         private EmployeRepository employeRepository = new EmployeRepository();
-        PPPDBContext employeeDBContext = new PPPDBContext();
+        DBContext employeeDBContext = new DBContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {

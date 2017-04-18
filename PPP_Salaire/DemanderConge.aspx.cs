@@ -11,7 +11,7 @@ namespace PPP_Salaire
     public partial class DemanderConge : System.Web.UI.Page
     {
 
-        PPPDBContext employeeDBContext = new PPPDBContext();
+        DBContext employeeDBContext = new DBContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
