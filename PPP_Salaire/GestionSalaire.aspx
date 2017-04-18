@@ -3,6 +3,26 @@
 <asp:Content ContentPlaceHolderID="headPlaceHolder" runat="server">
     <!--  <link href="Content/bootstrap.min.css" rel="stylesheet" />-->
     <link href="Content/MyCss.less" rel="stylesheet" />
+    <style>
+        td {
+            border-right: 1px solid #C1DAD7;
+            border-bottom: 1px solid #C1DAD7;
+            background: #fff;
+            padding: 0;
+            color: #6D929B;
+        }
+
+        table {
+            table-layout: fixed;
+            width: 500px;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+            table td {
+                width: 75px;
+            }
+    </style>
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="pageTiltleHolder" runat="server">
@@ -14,6 +34,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 Liste des employes
+           
             </div>
             <div class="panel-body">
                 <asp:GridView ID="GridViewEmploye" runat="server" AllowPaging="True" PageSize="7"

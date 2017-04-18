@@ -33,6 +33,42 @@ namespace PPP_Salaire
                     if (item is Button)
                         ((Button)item).Enabled = false;
                 }
+
+
+
+            }
+            IDictionary<int, string>[] dictTab = MyXMLUtilities.GetRegle();
+            IDictionary<int, string> dictSal = dictTab[0];
+            IDictionary<int, string> dictRemun = dictTab[1];
+            IDictionary<int, string> dictCotis = dictTab[2];
+            IDictionary<int, string> dictArith = dictTab[3];
+            for (int i = 0; i < dictSal.Count + dictRemun.Count + dictCotis.Count + dictArith.Count; i++)
+            {
+                Label lbl = new Label();
+                lbl.ID = "lblid" + i;
+                KeyValuePair<int, string> kvp = new KeyValuePair<int, string>();
+                kvp = dictSal.Where(x => x.Key == i).FirstOrDefault();
+                lbl.ForeColor = System.Drawing.Color.LawnGreen;
+                if (kvp.Value == null)
+                {
+                    kvp = dictRemun.Where(x => x.Key == i).FirstOrDefault();
+                    lbl.ForeColor = System.Drawing.Color.Blue;
+
+                }
+
+                if (kvp.Value == null)
+                {
+                    kvp = dictCotis.Where(x => x.Key == i).FirstOrDefault();
+                    lbl.ForeColor = System.Drawing.Color.Brown;
+                }
+
+                if (kvp.Value == null)
+                {
+                    kvp = dictArith.Where(x => x.Key == i).FirstOrDefault();
+                    lbl.ForeColor = System.Drawing.Color.DarkSalmon;
+                }
+                lbl.Text = kvp.Value;
+                this.goregle.Controls.Add(lbl);
             }
 
         }
@@ -78,9 +114,9 @@ namespace PPP_Salaire
             IList<string> list = new List<string>();
             foreach (ListItem item in checkList.Items)
             {
-                if (item.Selected == true && item.Enabled==true)
+                if (item.Selected == true && item.Enabled == true)
                 {
-                    list.Add(item.Text.Replace(" ","_"));
+                    list.Add(item.Text.Replace(" ", "_"));
                 }
             }
             return list;
@@ -107,6 +143,7 @@ namespace PPP_Salaire
             this.BtnSelectRemuneration.Visible = true;
 
             this.BtnSaisirRegle.Visible = false;
+            this.PanelCalc.Visible = true;
 
             foreach (var item in this.DivKeys.Controls)
             {
@@ -424,7 +461,8 @@ namespace PPP_Salaire
             IDictionary<int, string> dict3 = (IDictionary<int, string>)ViewState["expressionsCotisation"];
             IDictionary<int, string> dict4 = (IDictionary<int, string>)ViewState["expressionsArithmethiques"];
             int count = (int)ViewState["expressionsIndice"];
-            MyXMLUtilities.SauvgarderRegle(dict1,dict2,dict3,dict4,count);
+            MyXMLUtilities.SauvgarderRegle(dict1, dict2, dict3, dict4, count);
+            Response.Redirect("~/GestionSalaire.aspx");
         }
     }
 }
