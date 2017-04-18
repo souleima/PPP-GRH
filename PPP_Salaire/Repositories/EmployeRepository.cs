@@ -34,10 +34,5 @@ namespace PPP_Salaire.Repositories
             return employeeDBContext.Employes.Include("DemandeConges").ToList();
         }
 
-        public List<DemandeConge> GetDemandeConges()
-        {
-            DBContext employeeDBContext = new DBContext();
-            return employeeDBContext.DemandeConges.ToList();
-        }
     }
 }

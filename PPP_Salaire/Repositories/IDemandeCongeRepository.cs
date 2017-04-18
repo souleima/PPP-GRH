@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace PPP_Salaire.Repositories
 {
-    public interface IEmployeRepository
+    interface IDemandeCongeRepository
     {
-        IList<Employe> Lister();
-        Employe GetById(int id);
-        void Update(Employe e);
-        List<Employe> GetEmployes();
+
+        IList<DemandeConge> Lister();
+        DemandeConge GetById(int id);
+        void Update(DemandeConge e);
     }
 }

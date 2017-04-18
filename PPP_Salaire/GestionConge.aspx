@@ -13,19 +13,13 @@
             </div>
             <div class="panel-body">
 
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" AllowPaging="True" PageSize="7"
-                    AllowSorting="True"
-                    CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
-            <Columns>
-                <asp:CommandField ShowSelectButton="True" />
-                <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
-                <asp:BoundField DataField="Nom" HeaderText="Nom" SortExpression="Nom" />
-                <asp:BoundField DataField="Prenom" HeaderText="Prenom" SortExpression="Prenom" />
-                <asp:BoundField DataField="Adresse" HeaderText="Adresse" SortExpression="Adresse" />
-                <asp:BoundField DataField="Num_SS" HeaderText="Num_SS" SortExpression="Num_SS" />
-                <asp:BoundField DataField="Date_dEmbauche" HeaderText="Date_dEmbauche" SortExpression="Date_dEmbauche" />
-            </Columns>
-            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <asp:SqlDataSource ID="SqlDSEmployeGrid" runat="server"></asp:SqlDataSource>
+                <asp:GridView ID="GridViewEmploye" runat="server" AllowPaging="True" PageSize="7"
+                    AllowSorting="True" OnPageIndexChanging="GridViewEmploye_PageIndexChanging"
+                    AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridViewEmploye_SelectedIndexChanged"
+                    CellPadding="4" ForeColor="#333333" GridLines="None"
+                    OnRowDataBound="GridViewEmploye_RowDataBound" CssClass="table table-hover">
+                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -36,9 +30,8 @@
                     <SortedAscendingHeaderStyle BackColor="#506C8C" />
                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-        </asp:GridView>
+                </asp:GridView>
                 
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetEmployes" TypeName="PPP_Salaire.Repositories.EmployeRepository"></asp:ObjectDataSource>
 </div>
         </div>
 </form>

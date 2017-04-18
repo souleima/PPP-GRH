@@ -14,7 +14,6 @@ namespace PPP_Salaire
 
         private EmployeRepository employeRepository = new EmployeRepository();
         DBContext employeeDBContext = new DBContext();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             string employeId = Request.QueryString["Id"];
@@ -35,7 +34,6 @@ namespace PPP_Salaire
         {
             return Status.Equals("EN_ATTENTE");
         }
-
         protected void btAccept_Click(object sender, EventArgs e)
         {
             Button lb = (Button)sender;
@@ -46,8 +44,8 @@ namespace PPP_Salaire
                 result.Status = "ACCEPTE";
                 employeeDBContext.SaveChanges();
             }
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Demande Acceptee'); window.location='" + Request.ApplicationPath + "CongeEmploye.aspx';", true);
         }
-
         protected void btRefuser_Click(object sender, EventArgs e)
         {
             Button lb = (Button)sender;
@@ -58,6 +56,7 @@ namespace PPP_Salaire
                 result.Status = "REFUSE";
                 employeeDBContext.SaveChanges();
             }
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Demande Refusee'); window.location='" + Request.ApplicationPath + "CongeEmploye.aspx';", true);
         }
     }
 }
