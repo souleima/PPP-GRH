@@ -10,6 +10,7 @@ namespace PPP_Salaire.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "PPP_Salaire.Entities.PPPDBContext";
         }
 
