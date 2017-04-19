@@ -137,6 +137,7 @@
     <Content Include="AdminTempL\js\raphael.min.js" />
     <Content Include="AdminTempL\js\startmin.js" />
     <Content Include="AdminTempL\TEMPLATE.html" />
+    <Content Include="AjouterConge.aspx" />
     <Content Include="CongeEmploye.aspx" />
     <Content Include="DemanderConge.aspx" />
     <Content Include="GestionCategorie.aspx" />
@@ -160,6 +161,7 @@
     <Content Include="AdminTempL\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="AdminTempL\LICENSE" />
     <Content Include="AdminTempL\README.md" />
+    <Content Include="StatisticEmploye.aspx" />
     <Content Include="XMLConfig\Cotisation.xml" />
     <Content Include="XMLConfig\regle.xml" />
     <Content Include="XMLConfig\Remuneration.xml" />
@@ -212,6 +214,13 @@
     </Compile>
     <Compile Include="AddEmployer.aspx.designer.cs">
       <DependentUpon>AddEmployer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AjouterConge.aspx.cs">
+      <DependentUpon>AjouterConge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjouterConge.aspx.designer.cs">
+      <DependentUpon>AjouterConge.aspx</DependentUpon>
     </Compile>
     <Compile Include="CongeEmploye.aspx.cs">
       <DependentUpon>CongeEmploye.aspx</DependentUpon>
@@ -301,6 +310,13 @@
     </Compile>
     <Compile Include="SalaireEmploye.aspx.designer.cs">
       <DependentUpon>SalaireEmploye.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticEmploye.aspx.cs">
+      <DependentUpon>StatisticEmploye.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StatisticEmploye.aspx.designer.cs">
+      <DependentUpon>StatisticEmploye.aspx</DependentUpon>
     </Compile>
     <Compile Include="StatisticsConge.aspx.cs">
       <DependentUpon>StatisticsConge.aspx</DependentUpon>

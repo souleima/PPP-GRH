@@ -32,7 +32,7 @@ namespace PPP_Salaire
             SqlDSForm.ConnectionString = connetionString;
             //DropdownList
             SqlDSList.ConnectionString = connetionString;
-            SqlDSList.SelectCommand = congeRep.SelectAll();
+            SqlDSList.SelectCommand = congeRep.Select();
             //GridView
             SqlDSGrid.ConnectionString = connetionString;
             SqlDSGrid.SelectCommand = "SELECT[Id], [DateDebut], [DateFin], [DateSubmit], [CongeID], [NbreJours], [Raison], [Status] FROM[DemandeConges]";

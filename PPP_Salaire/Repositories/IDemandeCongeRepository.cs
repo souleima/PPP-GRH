@@ -11,7 +11,7 @@ namespace PPP_Salaire.Repositories
     {
 
         IList<DemandeConge> Lister();
-        DemandeConge GetById(int id);
+        List<DemandeConge> GetByEmployeId(int id);
         void Update(DemandeConge e);
     }
 }

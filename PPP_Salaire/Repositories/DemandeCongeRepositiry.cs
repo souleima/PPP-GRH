@@ -16,9 +16,10 @@ namespace PPP_Salaire.Repositories
         }
 
 
-        public DemandeConge GetById(int id)
+        public List<DemandeConge> GetByEmployeId(int id)
         {
-            return this.db.DemandeConges.Find(id);
+            return db.DemandeConges.Where(d => d.Employe.Id == id).ToList();
+            //return this.db.DemandeConges.Find(id);
         }
 
         public void Update(DemandeConge e)

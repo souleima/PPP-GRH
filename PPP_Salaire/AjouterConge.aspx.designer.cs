@@ -10,33 +10,33 @@
 namespace PPP_Salaire {
     
     
-    public partial class pppMaster {
+    public partial class AjouterConge {
         
         /// <summary>
-        /// Contrôle headPlaceHolder.
+        /// Contrôle form1.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder headPlaceHolder;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Contrôle pageTiltleHolder.
+        /// Contrôle FormView.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder pageTiltleHolder;
+        protected global::System.Web.UI.WebControls.FormView FormView;
         
         /// <summary>
-        /// Contrôle PppContentPlaceHolder.
+        /// Contrôle SqlDSConge.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder PppContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDSConge;
     }
 }

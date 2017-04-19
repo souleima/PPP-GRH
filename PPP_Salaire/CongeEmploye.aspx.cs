@@ -12,6 +12,7 @@ namespace PPP_Salaire
     public partial class CongeEmploye : System.Web.UI.Page
     {
 
+        private DemandeCongeRepositiry employeCongeRepository = new DemandeCongeRepositiry();
         private EmployeRepository employeRepository = new EmployeRepository();
         DBContext employeeDBContext = new DBContext();
         protected void Page_Load(object sender, EventArgs e)
@@ -19,15 +20,20 @@ namespace PPP_Salaire
             string employeId = Request.QueryString["Id"];
             Employe employe = this.employeRepository.GetById(Convert.ToInt32(employeId));
 
-            if (!Page.IsPostBack)
+            if (employe == null)
+                Response.Redirect("~/GestionSalaire.aspx");
+            else
             {
-                FillData(employe);
+
+                if (!Page.IsPostBack)
+                {
+                    FillData(employe);
+                }
             }
         }
         private void FillData(Employe emp)
         {
-            this.GridView1.DataSource = employeeDBContext.DemandeConges.Where(
-                demande => demande.Employe.Id == emp.Id ).ToList();
+            this.GridView1.DataSource = employeCongeRepository.GetByEmployeId(emp.Id);
             this.GridView1.DataBind();
         }
         protected Boolean IsEnAttente(String Status)
@@ -44,7 +50,8 @@ namespace PPP_Salaire
                 result.Status = "ACCEPTE";
                 employeeDBContext.SaveChanges();
             }
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Demande Acceptee'); window.location='" + Request.ApplicationPath + "CongeEmploye.aspx';", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Demande Acceptee'); window.location='" 
+                + Request.ApplicationPath + "CongeEmploye.aspx?Id="+ Request.QueryString["Id"] + "';", true);
         }
         protected void btRefuser_Click(object sender, EventArgs e)
         {
@@ -56,7 +63,8 @@ namespace PPP_Salaire
                 result.Status = "REFUSE";
                 employeeDBContext.SaveChanges();
             }
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Demande Refusee'); window.location='" + Request.ApplicationPath + "CongeEmploye.aspx';", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Demande Refusee'); window.location='" 
+                + Request.ApplicationPath + "CongeEmploye.aspx?Id=" + Request.QueryString["Id"] + "';", true);
         }
     }
 }

@@ -10,7 +10,7 @@
 namespace PPP_Salaire {
     
     
-    public partial class StatisticsConge {
+    public partial class StatisticEmploye {
         
         /// <summary>
         /// Contrôle form1.
@@ -40,30 +40,12 @@ namespace PPP_Salaire {
         protected global::System.Web.UI.DataVisualization.Charting.Chart Chart;
         
         /// <summary>
-        /// Contrôle SqlDSChart.
+        /// Contrôle SqlDSEmployeConge.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDSChart;
-        
-        /// <summary>
-        /// Contrôle GridView1.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// Contrôle ObjectDataSource1.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDSEmployeConge;
     }
 }
