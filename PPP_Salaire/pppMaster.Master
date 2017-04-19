@@ -46,9 +46,7 @@
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Startmin</a>
-            </div>
+          
 
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -58,16 +56,12 @@
             </button>
 
             <!-- Top Navigation: Left Menu -->
-            <ul class="nav navbar-nav navbar-left navbar-top-links">
-                <li><a href="#"><i class="fa fa-home fa-fw"></i>Website</a></li>
-            </ul>
+         
 
             <!-- Top Navigation: Right Menu -->
             <ul class="nav navbar-right navbar-top-links">
                 <li class="dropdown navbar-inverse">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i><b class="caret"></b>
-                    </a>
+                 
                     <ul class="dropdown-menu dropdown-alerts">
                         <li>
                             <a href="#">
@@ -88,19 +82,13 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>secondtruth <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a>
+
+                 <asp:Label ID="login_label"  runat="server" Text="login_label"></asp:Label>
+                   <li><a href="Default.aspx"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
-                        </li>
-                    </ul>
+                    
                 </li>
+              
             </ul>
 
             <!-- Sidebar -->
@@ -118,41 +106,41 @@
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="GestionSalaireitem" runat="server">
                             <a href="GestionSalaire.aspx" class="active"><i class="fa fa-dashboard fa-fw"></i>Gérer les salaires</a>
                         </li>
-                        <li>
+                        <li id="GestionCongeitem" runat="server">
                             <a href="GestionConge.aspx" class="active"><i class="fa fa-dashboard fa-fw"></i>Gérer les congés</a>
                         </li>
                         <ul class="nav nav-second-level">
-                                <li>
+                                <li id="StatisticsConge" runat="server">
                                     <a href="StatisticsConge.aspx">Statistique</a>
                                 </li>
 
                                  </ul>
-                                <li>
+                                <li id="DemanderCongeitem" runat="server">
                             <a href="DemanderConge.aspx" class="active"><i class="fa fa-dashboard fa-fw"></i>Demander Congé</a>
                         </li>
-                           <li>
+                           <li id="GestionEmployeitem" runat="server">
                             <a href="GestionEmploye.aspx" class="active"><i class="fa fa-dashboard fa-fw"></i>Gérer les employées</a>
                         </li>
                                  <ul class="nav nav-second-level">
-                                <li>
+                                <li id="AddEmployeritem" runat="server">
                                     <a href="AddEmployer.aspx">Ajouter employé</a>
                                 </li>
 
                                  </ul>
-                           <li>
+                           <li id="GestionCategorieitem" runat="server">
                             <a href="GestionCategorie.aspx" class="active"><i class="fa fa-dashboard fa-fw"></i>Gérer les Catégories</a>
                         </li>
                           <ul class="nav nav-second-level">
-                                <li>
+                                <li id="AddCategoryitem" runat="server">
                                     <a href="AddCategory.aspx">Ajouter catégorie</a>
                                 </li>
 
                                  </ul>
 
-                        <li>
+                        <li id="parametrage" runat="server">
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i>Parametrage<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -213,6 +201,5 @@
     <!-- Custom Theme JavaScript -->
     <script src="AdminTempL/js/startmin.js"></script>
 
-</body>
-</html>
+</body></html>
 

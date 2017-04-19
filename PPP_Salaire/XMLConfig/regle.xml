@@ -1,11 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <regle>
-  <Arithmetique>8</Arithmetique>
-  <Arithmetique>3</Arithmetique>
-  <Arithmetique>5</Arithmetique>
-  <Arithmetique>)</Arithmetique>
-  <Arithmetique>(</Arithmetique>
+  <Salaire>Salaire de base</Salaire>
   <Arithmetique>+</Arithmetique>
-  <Arithmetique>(</Arithmetique>
-  <Arithmetique>(</Arithmetique>
+  <Remuneration>Remboursement transports en commun</Remuneration>
 </regle>
