@@ -1,8 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pppMaster.Master" AutoEventWireup="true" CodeBehind="DemanderConge.aspx.cs" Inherits="PPP_Salaire.DemanderConge" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headPlaceHolder" runat="server">
-    <style>
-        
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pageTiltleHolder" runat="server">
     Demande Conge
@@ -16,52 +13,114 @@
                 Formulaire Conges
             </div>
             <div class="panel-body">
-        <asp:Label ID="LabelList" runat="server" Text="Selectionner votre type de conge"></asp:Label>
-        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDSList" DataTextField="Nom" DataValueField="Nom" OnSelectedIndexChanged="Page_Load">
+        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource4" DataTextField="Nom" DataValueField="Nom" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
         </asp:DropDownList>
-                <asp:Calendar ID="Calendar" runat="server" OnDayRender="Calendar_DayRender" OnSelectionChanged="Calendar_SelectionChanged"></asp:Calendar>
+        <p>
 
-        <asp:FormView ID="FormDemande" runat="server" DefaultMode="Insert" DataSourceID="SqlDSForm" OnItemInserted="FormDemande_ItemInserted" OnItemInserting="FormDemande_ItemInserting">
+        <p>
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" SelectCommand="SELECT [Nom] FROM [Conges]"></asp:SqlDataSource>
+        <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1" DefaultMode="Insert" RenderOuterTable="true">
             <EditItemTemplate>
+                DateDebut:
+                <asp:TextBox ID="DateDebutTextBox" runat="server" Text='<%# Bind("DateDebut") %>' />
+                <br />
+                DateFin:
+                <asp:TextBox ID="DateFinTextBox" runat="server" Text='<%# Bind("DateFin") %>' />
+                <br />
+                CongeID:
+                <asp:TextBox ID="CongeIDTextBox" runat="server" Text='<%# Bind("CongeID") %>' />
+                <br />
+                NbreJours:
+                <asp:TextBox ID="NbreJoursTextBox" runat="server" Text='<%# Bind("NbreJours") %>' />
+                <br />
                 Raison:
                 <asp:TextBox ID="RaisonTextBox" runat="server" Text='<%# Bind("Raison") %>' />
                 <br />
                 Employe_Id:
                 <asp:TextBox ID="Employe_IdTextBox" runat="server" Text='<%# Bind("Employe_Id") %>' />
                 <br />
-                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Mettre à jour" />
-                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Annuler" />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
             </EditItemTemplate>
             <InsertItemTemplate>
+                DateDebut:
+                <asp:TextBox ID="DateDebutTextBox" runat="server" Text='<%# Bind("DateDebut") %>' />
+                <br />
+                DateFin:
+                <asp:TextBox ID="DateFinTextBox" runat="server" Text='<%# Bind("DateFin") %>' />
+                <br />
+                CongeID:
+                <asp:TextBox ID="CongeIDTextBox" runat="server" Text='<%# Bind("CongeID") %>' />
+                <br />
+                NbreJours:
+                <asp:TextBox ID="NbreJoursTextBox" runat="server" Text='<%# Bind("NbreJours") %>' />
+                <br />
                 Raison:
                 <asp:TextBox ID="RaisonTextBox" runat="server" Text='<%# Bind("Raison") %>' />
                 <br />
                 Employe_Id:
                 <asp:TextBox ID="Employe_IdTextBox" runat="server" Text='<%# Bind("Employe_Id") %>' />
                 <br />
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insérer" />
-                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Annuler" />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
             </InsertItemTemplate>
             <ItemTemplate>
-                Raison:
-                <asp:Label ID="RaisonLabel" runat="server" Text='<%# Bind("Raison") %>' />
+                <table>
+                    <tr>
+                        <td>DateDebut</td>
+                        <td>:</td>
+                        <td>
+                            <asp:Label ID="DateDebutLabel" runat="server" Text='<%# Bind("DateDebut") %>' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>DateFin</td>
+                        <td>:</td>
+                        <td>
+                            <asp:Label ID="DateFinLabel" runat="server" Text='<%# Bind("DateFin") %>' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CongeID</td>
+                        <td>:</td>
+                        <td>
+                            <asp:Label ID="CongeIDLabel" runat="server" Text='<%# Bind("CongeID") %>' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>NbreJours</td>
+                        <td>:</td>
+                        <td>
+                            <asp:Label ID="NbreJoursLabel" runat="server" Text='<%# Bind("NbreJours") %>' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Raison</td>
+                        <td>:</td>
+                        <td>
+                            <asp:Label ID="RaisonLabel" runat="server" Text='<%# Bind("Raison") %>' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Employe_Id</td>
+                        <td>:</td>
+                        <td>
+                            <asp:Label ID="Employe_IdLabel" runat="server" Text='<%# Bind("Employe_Id") %>' />
+                        </td>
+                    </tr>
+                </table>
                 <br />
-
-                Employe_Id:
-                <asp:Label ID="Employe_IdLabel" runat="server" Text='<%# Bind("Employe_Id") %>' />
-                <br />
-
             </ItemTemplate>
         </asp:FormView>
-            </div>
-        </div>
+        <p>
+            </div></div>
             
         <div class="panel panel-default">
             <div class="panel-heading">
                 Mes Demandes Conges
             </div>
             <div class="panel-body">
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDSGrid"
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource3"
                 AllowPaging="True" PageSize="7"
                     AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover">
                 <Columns>
@@ -76,7 +135,7 @@
                     <asp:TemplateField HeaderText="Cancel">
                         <ItemTemplate>
                             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" Visible='<%# IsEnAttente((String)Eval("Status")) %>'/>
-                            <asp:HiddenField ID="HiddenFieldID" runat="server" Value='<%# Eval("Id") %>'/>
+                <asp:HiddenField ID="HiddenFieldID" runat="server" Value='<%# Eval("Id") %>'/>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -92,13 +151,12 @@
                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
-            </div>
-        </div>
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <asp:SqlDataSource ID="SqlDSGrid" runat="server"></asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDSForm" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" SelectCommand="SELECT [Raison], [Employe_Id] FROM [DemandeConges]"></asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDSList" runat="server"></asp:SqlDataSource>
+                </div></div>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" SelectCommand="SELECT [Id], [DateDebut], [DateFin], [DateSubmit], [CongeID], [NbreJours], [Raison], [Status] FROM [DemandeConges]"></asp:SqlDataSource>
+        <p>
+
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" InsertCommand="INSERT INTO [DemandeConges] ([DateDebut], [DateFin], [CongeID], [NbreJours], [Raison], [Employe_Id]) VALUES (@DateDebut, @DateFin, @CongeID, @NbreJours, @Raison, @Employe_Id)" SelectCommand="SELECT [DateDebut], [DateFin], [CongeID], [NbreJours], [Raison], [Employe_Id] FROM [DemandeConges]"></asp:SqlDataSource>
             
-        </form>
+</form>
 
 </asp:Content>

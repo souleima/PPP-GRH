@@ -128,7 +128,12 @@
                                 <li id="AddEmployeritem" runat="server">
                                     <a href="AddEmployer.aspx">Ajouter employé</a>
                                 </li>
-
+                                  <li id="Gestionprofil" runat="server">
+                                    <a href="GestionProfil.aspx">Consulter mon profil</a>
+                                </li>
+                                       <li id="Changepassword" runat="server">
+                                    <a href="ChangePassword.aspx">Changer mot de passe</a>
+                                </li>
                                  </ul>
                            <li id="GestionCategorieitem" runat="server">
                             <a href="GestionCategorie.aspx" class="active"><i class="fa fa-dashboard fa-fw"></i>Gérer les Catégories</a>
@@ -145,10 +150,6 @@
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="ParametrerSalaireV2.aspx">Salaire</a>
-                                </li>
-                                
-                                <li>
-                                    <a href="AjouterConge.aspx">Conge</a>
                                 </li>
                                 <%--<li>
                                     <a href="#">Third Level <span class="fa arrow"></span></a>

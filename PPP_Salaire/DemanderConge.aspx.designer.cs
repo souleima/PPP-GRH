@@ -22,15 +22,6 @@ namespace PPP_Salaire {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Contrôle LabelList.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelList;
-        
-        /// <summary>
         /// Contrôle DropDownList1.
         /// </summary>
         /// <remarks>
@@ -40,22 +31,22 @@ namespace PPP_Salaire {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// Contrôle Calendar.
+        /// Contrôle SqlDataSource4.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource4;
         
         /// <summary>
-        /// Contrôle FormDemande.
+        /// Contrôle FormView1.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormDemande;
+        protected global::System.Web.UI.WebControls.FormView FormView1;
         
         /// <summary>
         /// Contrôle GridView1.
@@ -67,39 +58,21 @@ namespace PPP_Salaire {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// Contrôle TextBox1.
+        /// Contrôle SqlDataSource3.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
         
         /// <summary>
-        /// Contrôle SqlDSGrid.
+        /// Contrôle SqlDataSource1.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDSGrid;
-        
-        /// <summary>
-        /// Contrôle SqlDSForm.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDSForm;
-        
-        /// <summary>
-        /// Contrôle SqlDSList.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDSList;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

@@ -36,7 +36,7 @@ namespace PPP_Salaire.Migrations
                         CongeID = c.Int(nullable: false),
                         NbreJours = c.Int(nullable: false),
                         Raison = c.String(),
-                        Status = c.String(nullable: false, defaultValue: "Status"),
+                        Status = c.String(),
                         Employe_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)

@@ -11,7 +11,5 @@ namespace PPP_Salaire.Repositories
     {
         IList<Employe> Lister();
         Employe GetById(int id);
-        void Update(Employe e);
-        List<Employe> GetEmployes();
     }
 }

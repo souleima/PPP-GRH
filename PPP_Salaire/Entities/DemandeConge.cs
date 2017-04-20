@@ -17,6 +17,5 @@ namespace PPP_Salaire.Entities
         public string Status { get; set; }
 
         public Employe Employe { get; set; }
-        
     }
 }

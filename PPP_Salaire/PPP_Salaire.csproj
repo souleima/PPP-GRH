@@ -137,16 +137,17 @@
     <Content Include="AdminTempL\js\raphael.min.js" />
     <Content Include="AdminTempL\js\startmin.js" />
     <Content Include="AdminTempL\TEMPLATE.html" />
-    <Content Include="AjouterConge.aspx" />
     <Content Include="CongeEmploye.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DemanderConge.aspx" />
     <Content Include="GestionCategorie.aspx" />
     <Content Include="GestionConge.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="GestionProfil.aspx" />
     <Content Include="GestionEmploye.aspx" />
     <Content Include="packages.config" />
     <Content Include="ParametrerSalaireV2.aspx" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Utilities\Scripts\jquery-1.9.1.min.map" />
     <Content Include="Content\MyCss.less" />
     <Content Include="pppMaster.Master" />
     <Content Include="AdminTempL\.gitignore" />
@@ -162,11 +163,11 @@
     <Content Include="AdminTempL\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="AdminTempL\LICENSE" />
     <Content Include="AdminTempL\README.md" />
-    <Content Include="StatisticEmploye.aspx" />
     <Content Include="XMLConfig\Cotisation.xml" />
     <Content Include="XMLConfig\regle.xml" />
     <Content Include="XMLConfig\Remuneration.xml" />
     <Content Include="XMLConfig\Salaire.xml" />
+    <Content Include="fieldsemploye.xml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -191,11 +192,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <None Include="Utilities\Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Utilities\Scripts\bootstrap.js" />
+    <Content Include="Utilities\Scripts\bootstrap.min.js" />
+    <Content Include="Utilities\Scripts\jquery-1.9.1.js" />
+    <Content Include="Utilities\Scripts\jquery-1.9.1.min.js" />
     <Content Include="StatisticsConge.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -215,13 +216,6 @@
     </Compile>
     <Compile Include="AddEmployer.aspx.designer.cs">
       <DependentUpon>AddEmployer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AjouterConge.aspx.cs">
-      <DependentUpon>AjouterConge.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AjouterConge.aspx.designer.cs">
-      <DependentUpon>AjouterConge.aspx</DependentUpon>
     </Compile>
     <Compile Include="CongeEmploye.aspx.cs">
       <DependentUpon>CongeEmploye.aspx</DependentUpon>
@@ -266,6 +260,20 @@
     <Compile Include="GestionConge.aspx.designer.cs">
       <DependentUpon>GestionConge.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionProfil.aspx.cs">
+      <DependentUpon>GestionProfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionProfil.aspx.designer.cs">
+      <DependentUpon>GestionProfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionEmploye.aspx.cs">
       <DependentUpon>GestionEmploye.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -307,10 +315,7 @@
       <DependentUpon>pppMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\CongeRepository.cs" />
-    <Compile Include="Repositories\DemandeCongeRepositiry.cs" />
     <Compile Include="Repositories\EmployeRepository.cs" />
-    <Compile Include="Repositories\IDemandeCongeRepository.cs" />
     <Compile Include="Repositories\IEmployeRepository.cs" />
     <Compile Include="SalaireEmploye.aspx.cs">
       <DependentUpon>SalaireEmploye.aspx</DependentUpon>
@@ -318,13 +323,6 @@
     </Compile>
     <Compile Include="SalaireEmploye.aspx.designer.cs">
       <DependentUpon>SalaireEmploye.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="StatisticEmploye.aspx.cs">
-      <DependentUpon>StatisticEmploye.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="StatisticEmploye.aspx.designer.cs">
-      <DependentUpon>StatisticEmploye.aspx</DependentUpon>
     </Compile>
     <Compile Include="StatisticsConge.aspx.cs">
       <DependentUpon>StatisticsConge.aspx</DependentUpon>

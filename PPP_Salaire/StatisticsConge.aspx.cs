@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Script.Services;
@@ -17,11 +16,10 @@ namespace PPP_Salaire
         {
             if (!IsPostBack)
             {
-                GetData();
                 GetChartTypes();
-
             }
         }
+
         private void GetChartTypes()
         {
             foreach (int chartType in Enum.GetValues(typeof(SeriesChartType)))
@@ -30,26 +28,12 @@ namespace PPP_Salaire
                 DropDownList1.Items.Add(li);
             }
         }
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            GridViewRow row = this.GridView1.SelectedRow;
-            Response.Redirect("~/StatisticEmploye.aspx?Id=" + row.Cells[1].Text);
-        }
+
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Chart.Series["Series1"].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), DropDownList1.SelectedValue);
-            GetData();
+            Chart1.Series["Series1"].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), DropDownList1.SelectedValue);
         }
-        private void GetData()
-        {
-            string connetionString = ConfigurationManager.ConnectionStrings["PPPConnectionString"].ConnectionString;
-            SqlDSChart.ConnectionString = connetionString;
-            SqlDSChart.SelectCommand = "SELECT Employes.Id, COUNT(DemandeConges.NbreJours) AS Expr1 FROM DemandeConges " +
-                "INNER JOIN Employes ON DemandeConges.Employe_Id = Employes.Id Group By Employes.Id";
-            Chart.ChartAreas["ChartArea1"].AxisY.Title = "Somme des jours conges";
-            Chart.ChartAreas["ChartArea1"].AxisX.Title = "Id Employe";
-            Chart.Series["Series1"].XValueMember = "Id";
-            Chart.Series["Series1"].YValueMembers = "Expr1";
-        }
+
+
     }
 }
