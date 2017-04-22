@@ -99,7 +99,7 @@ namespace PPP_Salaire
         protected void BtChart_Click(object sender, EventArgs e)
         {
             LoadData();
-            
+
         }
         public void LoadData()
         {
