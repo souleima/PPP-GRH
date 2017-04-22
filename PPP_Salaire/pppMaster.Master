@@ -112,12 +112,6 @@
                         <li id="GestionCongeitem" runat="server">
                             <a href="GestionConge.aspx" class="active"><i class="fa fa-dashboard fa-fw"></i>Gérer les congés</a>
                         </li>
-                        <ul class="nav nav-second-level">
-                                <li id="StatisticsConge" runat="server">
-                                    <a href="StatisticsConge.aspx">Statistique</a>
-                                </li>
-
-                                 </ul>
                                 <li id="DemanderCongeitem" runat="server">
                             <a href="DemanderConge.aspx" class="active"><i class="fa fa-dashboard fa-fw"></i>Demander Congé</a>
                         </li>
@@ -144,11 +138,13 @@
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i>Parametrage<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="ParametrerSalaireV2.aspx">Salaire</a>
+                                    <a href="ParametrerSalaire.aspx">Salaire</a>
                                 </li>
-                                
                                 <li>
                                     <a href="AjouterConge.aspx">Conge</a>
+                                </li>
+                                <li>
+                                    <a href="StatisticsConge.aspx">Statistique</a>
                                 </li>
                                 <%--<li>
                                     <a href="#">Third Level <span class="fa arrow"></span></a>

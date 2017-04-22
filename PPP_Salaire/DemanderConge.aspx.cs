@@ -7,40 +7,50 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PPP_Salaire.Repositories;
 using System.Configuration;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace PPP_Salaire
 {
     public partial class DemanderConge : System.Web.UI.Page
     {
-
         DBContext employeeDBContext = new DBContext();
-        DemandeCongeRepositiry demandeCongeRep = new DemandeCongeRepositiry();
-        CongeRepository congeRep = new CongeRepository();
+        IDemandeCongeRepository demandeCongeRep = new DemandeCongeRepositiry();
+        IEmployeRepository employeRep = new EmployeRepository();
+        ICongeRepository congeRep = new CongeRepository();
         int IdSelectedConge;
         public static List<DateTime> list = new List<DateTime>();
-        public static List<DateTime> ListDates = new List<DateTime>();
-        DateTime DateDebut,DateFin;
-
+        DateTime DateDebut, DateFin;
+        string columnName;
+        int IdUser;
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            string connetionString = ConfigurationManager.ConnectionStrings["PPPConnectionString"].ConnectionString;
-            //get the selected item Id (correspondant to the DB id ) from the dropdown list
-            IdSelectedConge = this.DropDownList1.SelectedIndex;
-            //Specify the connectionString , insert, select cmd of the formView
-            SqlDSForm.SelectCommand = demandeCongeRep.Select();
-            SqlDSForm.ConnectionString = connetionString;
-            //DropdownList
-            SqlDSList.ConnectionString = connetionString;
-            SqlDSList.SelectCommand = congeRep.Select();
-            //GridView
-            SqlDSGrid.ConnectionString = connetionString;
-            SqlDSGrid.SelectCommand = "SELECT[Id], [DateDebut], [DateFin], [DateSubmit], [CongeID], [NbreJours], [Raison], [Status] FROM[DemandeConges]";
-
+            //stocker l'id de l'utilisateur connecté
+            IdUser = employeRep.GetByLogin(Session["user"].ToString());
+            if (!IsPostBack)
+            {
+                string connetionString = ConfigurationManager.ConnectionStrings["PPPConnectionString"].ConnectionString;
+                //charger les demandes de conges correspondantes à ce user
+                this.GridViewDemandesConge.DataSource = this.demandeCongeRep.ListerById(IdUser);
+                this.GridViewDemandesConge.DataBind();
+                //Specify the connectionString , insert, select cmd of the formView
+                SqlDSForm.SelectCommand = demandeCongeRep.Select();
+                SqlDSForm.ConnectionString = connetionString;
+                //configuration de la liste des types de conges
+                SqlDSList.ConnectionString = connetionString;
+                SqlDSList.SelectCommand = congeRep.Select();
+                //config de la list des colonnes de la gridView pour le filtrage 
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM INFORMATION_SCHEMA.columns as name where table_name = 'DemandeConges'", connetionString);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                DropDownListColumn.DataSource = dt;
+                DropDownListColumn.DataValueField = "COLUMN_NAME";
+                DropDownListColumn.DataTextField = "COLUMN_NAME";
+                DropDownListColumn.DataBind();
+            }
         }
-        
-        //Delete the "DemandeConge" befor it's handeled by the admin ( 'EN_ATTENTE')
-        protected void Button1_Click(object sender, EventArgs e)
+        //supprimer demande si son status est "EN_ATTENTE" par clik sur le boutton "Annuler"
+        protected void BtAnuulerDemande_Click(object sender, EventArgs e)
         {
             Button lb = (Button)sender;
             HiddenField hd = (HiddenField)lb.FindControl("HiddenFieldID");
@@ -53,42 +63,24 @@ namespace PPP_Salaire
             Show(" Demande Supprimé");
             Response.Redirect("DemanderConge.aspx");
         }
-
-        //Specify if the item is pending show the delete button for the employe
+        //specifier que la demande n'est pas etait traité par l'admin --- > peut etre supprimé
         protected Boolean IsEnAttente(String Status)
         {
             return Status.Equals("EN_ATTENTE");
         }
-
-        protected void FormDemande_ItemInserted(object sender, FormViewInsertedEventArgs e)
-        {
-            Calendar.SelectedDates.Clear();
-            ListDates.Clear();
-            list.Clear();
-            Show("Demande Envoyé");
-        }
-
-        public void Show(string msg)
-        {
-            Page page = HttpContext.Current.Handler as Page;
-            if (page != null)
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('"+msg+"'); window.location='" + Request.ApplicationPath + "DemanderConge.aspx';", true);
-
-            }
-        }
-
+        //selctionner deux jours sur le calendrier 
         protected void Calendar_DayRender(object sender, DayRenderEventArgs e)
         {
-            if (list.Count() < 2) { 
-            if (e.Day.IsSelected == true )
+            if (list.Count() < 1)
             {
-                list.Add(e.Day.Date);
-            }
-            Session["SelectedDates"] = list;
+                if (e.Day.IsSelected == true)
+                {
+                    list.Add(e.Day.Date);
+                }
+                Session["SelectedDates"] = list;
             }
         }
-
+        //updater le changement des selections sur le calendrier
         protected void Calendar_SelectionChanged(object sender, EventArgs e)
         {
             if (Session["SelectedDates"] != null)
@@ -100,12 +92,66 @@ namespace PPP_Salaire
                 }
             }
         }
-
+        //specifier la commande d'insertion du formulaire de demande de conge
         protected void FormDemande_ItemInserting(object sender, FormViewInsertEventArgs e)
         {
-            DateDebut = Calendar.SelectedDates[0];
-            DateFin = Calendar.SelectedDates[1];
-            SqlDSForm.InsertCommand = demandeCongeRep.Inserer(IdSelectedConge+1, DateDebut, DateFin);
+            if (Calendar.SelectedDates.Count == 0)
+            {
+                Show("Select tow dates from the calendar");
+            }
+            else
+            {
+                DateDebut = Calendar.SelectedDates[0];
+                DateFin = Calendar.SelectedDates[1];
+            }
+            //recuperer l'id du conge selectionner dans la liste
+            IdSelectedConge = this.DropDownList1.SelectedIndex;
+            //commande d'insertion de la demande
+            SqlDSForm.InsertCommand = demandeCongeRep.Inserer(IdSelectedConge + 1, DateDebut, DateFin, IdUser);
+        }
+        //traitement suite a l'insertion
+        protected void FormDemande_ItemInserted(object sender, FormViewInsertedEventArgs e)
+        {
+            Calendar.SelectedDates.Clear();
+            list.Clear();
+            Show("Demande Envoyé");
+        }
+        //fonction de popup
+        public void Show(string msg)
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            if (page != null)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('" + msg + "'); window.location='" + Request.ApplicationPath + "DemanderConge.aspx';", true);
+
+            }
+        }
+        //fondtion de recherche dans la gridView
+        protected void FilterResult(object sender, EventArgs e)
+        {
+            columnName = DropDownListColumn.SelectedValue;
+            this.GridViewDemandesConge.DataSource = this.demandeCongeRep.ListerBySelection(columnName, TxId.Text, IdUser);
+            this.GridViewDemandesConge.DataBind();
+
+        }
+        //changer l'index de la gripView 
+        protected void GridViewEmploye_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            this.GridViewDemandesConge.PageIndex = e.NewPageIndex;
+            this.GridViewDemandesConge.DataSource = this.demandeCongeRep.Lister();
+            this.GridViewDemandesConge.DataBind();
+        }
+        //attacher les donnees avec les lignes de la gridView
+        protected void GridViewEmploye_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                for (int i = 1; i < e.Row.Cells.Count; i++)
+                {
+                    LinkButton Link = e.Row.Cells[i].Controls[0] as LinkButton;
+
+                }
+            }
         }
     }
 }

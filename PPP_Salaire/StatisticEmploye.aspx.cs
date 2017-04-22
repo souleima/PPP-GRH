@@ -15,7 +15,7 @@ namespace PPP_Salaire
 {
     public partial class StatisticEmploye : System.Web.UI.Page
     {
-        private EmployeRepository employeRepository = new EmployeRepository();
+        IEmployeRepository employeRepository = new EmployeRepository();
         DBContext employeeDBContext = new DBContext();
 
         protected void Page_Load(object sender, EventArgs e)

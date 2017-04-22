@@ -13,5 +13,8 @@ namespace PPP_Salaire.Repositories
         Employe GetById(int id);
         void Update(Employe e);
         List<Employe> GetEmployes();
+        IList<Employe> ListerBySelection(string columnName, string value);
+        string Select();
+        int GetByLogin(string login);
     }
 }

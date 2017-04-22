@@ -1,18 +1,48 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pppMaster.Master" AutoEventWireup="true" CodeBehind="CongeEmploye.aspx.cs" Inherits="PPP_Salaire.CongeEmploye" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="headPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pageTiltleHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="PppContentPlaceHolder" runat="server">
     <form id="form1" runat="server">
-        
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 Historique des Conges
             </div>
             <div class="panel-body">
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" PageSize="7"
-                    AllowSorting="True" AutoGenerateSelectButton="True" 
+                <br />
+                <center>
+                    <table>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label1" runat="server" Text="Selectionner la colonne sujet de recherche :"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:DropDownList ID="DropDownListColumn" Width="200px" runat="server"></asp:DropDownList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label2" runat="server" Text="saisir la chaine à rechercher :"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="TxId" Width="200px" runat="server" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <center>
+                                <br />
+                <asp:Button runat="server" Width="200px" ID="btnSearch" Text="Search" OnClick="FilterResult" />
+                                </center>
+                        </td>
+                    </tr>
+                </table>
+                    <br />
+                <asp:GridView ID="GridViewDemande" runat="server" AllowPaging="True" PageSize="7"
+                    AllowSorting="True" AutoGenerateSelectButton="True" OnPageIndexChanging="GridViewDemande_PageIndexChanging" 
                     CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover">
                     <Columns>
                         <asp:TemplateField HeaderText="Accepter">

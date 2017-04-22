@@ -11,9 +11,10 @@ namespace PPP_Salaire
 {
     public partial class AjouterConge : System.Web.UI.Page
     {
-        CongeRepository CongeRepo = new CongeRepository();
+        ICongeRepository CongeRepo = new CongeRepository();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //configiration de la datasource du FormView 
             string connetionString = ConfigurationManager.ConnectionStrings["PPPConnectionString"].ConnectionString;
             SqlDSConge.ConnectionString = connetionString;
             SqlDSConge.SelectCommand = CongeRepo.Select();

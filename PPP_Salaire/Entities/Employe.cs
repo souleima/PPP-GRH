@@ -12,10 +12,8 @@ namespace PPP_Salaire.Entities
     public class Employe
     {
         public int Id { get; set; }
-        //........GestionSalaire.aspx.cs : ligne 56
-        public string login { get; set; }
-        public string password { get; set; }
-        //........
+        public string Login { get; set; }
+        public string Password { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string Adresse { get; set; }

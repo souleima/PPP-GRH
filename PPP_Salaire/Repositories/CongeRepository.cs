@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PPP_Salaire.Repositories
 {
-    public class CongeRepository
+    public class CongeRepository : ICongeRepository
     {
         public string Select()
         {
