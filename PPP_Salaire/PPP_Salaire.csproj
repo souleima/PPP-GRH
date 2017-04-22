@@ -579,11 +579,17 @@
     <Content Include="Scripts\jquery-2.2.3.js" />
     <Content Include="Scripts\jquery-2.2.3.min.js" />
     <Content Include="StatisticEmploye.aspx" />
+    <Content Include="Utilities\Scripts\bootstrap.js" />
+    <Content Include="Utilities\Scripts\bootstrap.min.js" />
+    <None Include="Utilities\Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Utilities\Scripts\jquery-1.9.1.js" />
+    <Content Include="Utilities\Scripts\jquery-1.9.1.min.js" />
     <Content Include="XMLConfig\Cotisation.xml" />
     <Content Include="XMLConfig\regle.xml" />
     <Content Include="XMLConfig\Remuneration.xml" />
     <Content Include="XMLConfig\Salaire.xml" />
     <Content Include="Scripts\jquery-2.2.3.min.map" />
+    <Content Include="Utilities\Scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
