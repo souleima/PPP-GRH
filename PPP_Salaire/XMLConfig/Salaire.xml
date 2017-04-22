@@ -6,5 +6,6 @@
   <CheckedAttributes>
     <CheckedAttribute>Heures_travaillées</CheckedAttribute>
     <CheckedAttribute>Heures_retards</CheckedAttribute>
+    <CheckedAttribute>Heures_supplementaires</CheckedAttribute>
   </CheckedAttributes>
 </Salaire>

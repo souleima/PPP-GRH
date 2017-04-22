@@ -26,6 +26,7 @@ namespace PPP_Salaire
             string output = cmd.ExecuteScalar().ToString();
             if (output == "1")
             {
+
                 Session["user"] = logintext.Text;
                 Response.Redirect("DemanderConge.aspx");
             }

@@ -39,9 +39,7 @@ namespace PPP_Salaire
                 var nomPropriete = item.Name;
                 var valeurPropriete = item.GetValue(employe);
 
-                if (item.PropertyType.Namespace.Equals("System") 
-                    && (!nomPropriete.Equals("login")
-                    &&(!nomPropriete.Equals("password"))))
+                if (item.PropertyType.Namespace.Equals("System"))
                 {
                     gauche_droite++;
                     Label lbl_nomPropriete = new Label();
@@ -91,7 +89,7 @@ namespace PPP_Salaire
 
                     TextBox txt_valeurPropriete = new TextBox();
                     txt_valeurPropriete.ID = "txt_" + typeof(Salaire) + nomPropriete;
-                    txt_valeurPropriete.Text = valeurPropriete?.ToString();
+                    txt_valeurPropriete.Text = valeurPropriete.ToString();
                     txt_valeurPropriete.Attributes.Add("class", "form-control");
 
 
@@ -137,7 +135,7 @@ namespace PPP_Salaire
 
                     TextBox txt_valeurPropriete = new TextBox();
                     txt_valeurPropriete.ID = "txt_" + typeof(Remuneration) + nomPropriete;
-                    txt_valeurPropriete.Text = valeurPropriete?.ToString();
+                    txt_valeurPropriete.Text = valeurPropriete.ToString();
                     txt_valeurPropriete.Attributes.Add("class", "form-control");
 
                     RegularExpressionValidator rv = new RegularExpressionValidator();
@@ -173,7 +171,7 @@ namespace PPP_Salaire
 
                     TextBox txt_valeurPropriete = new TextBox();
                     txt_valeurPropriete.ID = "txt_" + typeof(Cotisation) + nomPropriete;
-                    txt_valeurPropriete.Text = valeurPropriete?.ToString();
+                    txt_valeurPropriete.Text = valeurPropriete.ToString();
                     txt_valeurPropriete.Attributes.Add("class", "form-control");
 
                     RegularExpressionValidator rv = new RegularExpressionValidator();
@@ -247,7 +245,7 @@ namespace PPP_Salaire
             }
             catch (SyntaxErrorException)
             {
-                v = "formule invalide !!";
+                v = "erreur de calcul !!";
             }
             this.LblNetAPayer.Text = v.ToString();
 
