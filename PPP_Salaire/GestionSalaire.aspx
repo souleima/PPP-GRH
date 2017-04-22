@@ -4,24 +4,6 @@
     <!--  <link href="Content/bootstrap.min.css" rel="stylesheet" />-->
     <link href="Content/MyCss.less" rel="stylesheet" />
     <style>
-        td {
-            border-right: 1px solid #C1DAD7;
-            border-bottom: 1px solid #C1DAD7;
-            background: #fff;
-            padding: 0;
-            color: #6D929B;
-        }
-
-        table {
-            table-layout: fixed;
-            width: 500px;
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-
-            table td {
-                width: 75px;
-            }
     </style>
 </asp:Content>
 
@@ -37,6 +19,41 @@
            
             </div>
             <div class="panel-body">
+                <br />
+                <center>
+                <table>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label1" runat="server" Text="Selectionner la colonne sujet de recherche :"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:DropDownList ID="DropDownListRecherche" Width="200px" runat="server"></asp:DropDownList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label2" runat="server" Text="saisir la chaine à rechercher :"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="TxtArechrcher" Width="200px" runat="server" CssClass="form-control" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <center>
+                                <br />
+                <asp:Button runat="server" Width="150px" ID="btnSearch" Text="Search"
+                    CssClass="btn btn-primary" OnClick="btnSearch_Click"/>
+                <asp:Button runat="server" Width="150px" ID="BtnReset" Text="Reset"
+                    CssClass="btn btn-default" OnClick="btnReset_Click"/>
+                                </center>
+                        </td>
+                    </tr>
+                </table>
+                    </center>
+                <br />
+
+
                 <asp:GridView ID="GridViewEmploye" runat="server" AllowPaging="True" PageSize="7"
                     AllowSorting="True" OnPageIndexChanging="GridViewEmploye_PageIndexChanging"
                     AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridViewEmploye_SelectedIndexChanged"
