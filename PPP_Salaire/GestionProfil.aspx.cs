@@ -31,17 +31,7 @@ namespace PPP_Salaire
             TextBox res = new TextBox();
 
             //    
-            //    
-            //   
-
-
-
-
-            //     while(reader1.Read())
-            //        {
-
-            //       columns.Add(reader1["Nom"].ToString());
-            //      }
+          
 
             var columns = new List<string>();
             using (SqlDataReader reader = cmd.ExecuteReader())
@@ -54,12 +44,7 @@ namespace PPP_Salaire
                         if (reader[1].ToString() == n.Name)
                         {
                             columns.Add(reader[1].ToString());
-                            //    reader1.Read();
-                            //txtBox.Text = reader[1].ToString() + reader1["'" + reader[1].ToString() + "'"].ToString();
-
-                            //      tc.Controls.Add(txtBox);
-                            //        tr.Cells.Add(tc);
-                            //          table.Rows.Add(tr);
+               
                         }
 
                 }

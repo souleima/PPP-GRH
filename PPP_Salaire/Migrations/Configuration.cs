@@ -9,7 +9,8 @@ namespace PPP_Salaire.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(PPP_Salaire.Entities.DBContext context)

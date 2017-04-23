@@ -10,25 +10,25 @@
 namespace PPP_Salaire {
     
     
-    public partial class AddEmployer {
+    public partial class ParametrerEmploye {
         
         /// <summary>
-        /// Contrôle form1.
+        /// Contrôle formemployer.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formemployer;
         
         /// <summary>
-        /// Contrôle FormView1.
+        /// Contrôle fields.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView1;
+        protected global::System.Web.UI.WebControls.CheckBoxList fields;
         
         /// <summary>
         /// Contrôle Button1.
@@ -38,14 +38,5 @@ namespace PPP_Salaire {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// Contrôle SqlDataSource2.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
     }
 }
