@@ -87,15 +87,15 @@
                 <center>
                 <table>
                     <tr>
-                 <td><asp:Label ID="Label1" runat="server" Text="Selectionner la colonne sujet de recherche :"></asp:Label></td>
-                 <td><asp:DropDownList ID="DropDownListColumn" class="styled-select" runat="server"  Width="200px" ></asp:DropDownList></td>
+                 <td><asp:Label ID="Label1" runat="server" Text="Selectionner la colonne sujet de recherche :" CssClass="form-control"></asp:Label></td>
+                 <td><asp:DropDownList ID="DropDownListColumn" class="styled-select" runat="server"  Width="200px" CssClass="form-control"></asp:DropDownList></td>
                     </tr>
                     <tr>
-                 <td><asp:Label ID="Label4" runat="server" Text="saisir la chaine à rechercher :"></asp:Label></td>
-                 <td><asp:TextBox ID="TxId" Width="200px" runat="server" /></td>
+                 <td><asp:Label ID="Label4" runat="server" Text="saisir la chaine à rechercher :" CssClass="form-control"></asp:Label></td>
+                 <td><asp:TextBox ID="TxId" Width="200px" runat="server" CssClass="form-control" /></td>
                         </tr>
                     <tr>
-                <td colspan ="2"><center> <br /> <asp:Button class="mybtn" runat="server" ID="btnSearch" Height="50px" Width="200px" Text="Search" OnClick="FilterResult"/></center></td>
+                <td colspan ="2"><center> <br /> <asp:Button class="mybtn" runat="server" CssClass="form-control" ID="btnSearch" Height="50px" Width="200px" Text="Search" OnClick="FilterResult"/></center></td>
                 </tr>
                 </table>
                     </center>
