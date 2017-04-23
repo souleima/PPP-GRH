@@ -191,6 +191,7 @@
     <Content Include="AdminTempL\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="AdminTempL\LICENSE" />
     <Content Include="AdminTempL\README.md" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
     <Content Include="Scripts\cldr\supplemental.js" />
@@ -223,6 +224,7 @@
     <Content Include="Scripts\dx.chartjs.js" />
     <Content Include="Scripts\dx.webappjs.debug.js" />
     <Content Include="Scripts\dx.webappjs.js" />
+    <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.af-ZA.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.af.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.am-ET.js" />
@@ -617,8 +619,6 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
