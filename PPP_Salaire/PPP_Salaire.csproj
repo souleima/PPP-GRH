@@ -702,9 +702,9 @@
     <Compile Include="GestionSalaire.aspx.designer.cs">
       <DependentUpon>GestionSalaire.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704232241432_intial.cs" />
-    <Compile Include="Migrations\201704232241432_intial.Designer.cs">
-      <DependentUpon>201704232241432_intial.cs</DependentUpon>
+    <Compile Include="Migrations\201704232324330_intial.cs" />
+    <Compile Include="Migrations\201704232324330_intial.Designer.cs">
+      <DependentUpon>201704232324330_intial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ParametrerSalaire.aspx.cs">
@@ -760,8 +760,8 @@
     <Compile Include="XMLConfig\MyXMLUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704232241432_intial.resx">
-      <DependentUpon>201704232241432_intial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704232324330_intial.resx">
+      <DependentUpon>201704232324330_intial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParametrerSalaire.aspx.resx">
       <DependentUpon>ParametrerSalaire.aspx.cs</DependentUpon>

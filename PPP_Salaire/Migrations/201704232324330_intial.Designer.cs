@@ -13,7 +13,7 @@ namespace PPP_Salaire.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201704232241432_intial"; }
+            get { return "201704232324330_intial"; }
         }
         
         string IMigrationMetadata.Source
