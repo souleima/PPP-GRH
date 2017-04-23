@@ -3,7 +3,7 @@ namespace PPP_Salaire.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class intial : DbMigration
     {
         public override void Up()
         {
@@ -48,8 +48,8 @@ namespace PPP_Salaire.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Login = c.String(),
-                        Password = c.String(),
+                        login = c.String(maxLength: 450),
+                        password = c.String(),
                         Nom = c.String(),
                         Prenom = c.String(),
                         Adresse = c.String(),
@@ -61,6 +61,7 @@ namespace PPP_Salaire.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Categories", t => t.Categorie_id_Id)
                 .ForeignKey("dbo.Salaires", t => t.Salaire_Id)
+                .Index(t => t.login, unique: true, name: "login")
                 .Index(t => t.Categorie_id_Id)
                 .Index(t => t.Salaire_Id);
             
@@ -131,6 +132,7 @@ namespace PPP_Salaire.Migrations
             DropIndex("dbo.Salaires", new[] { "Cotisation_Id" });
             DropIndex("dbo.Employes", new[] { "Salaire_Id" });
             DropIndex("dbo.Employes", new[] { "Categorie_id_Id" });
+            DropIndex("dbo.Employes", "login");
             DropIndex("dbo.DemandeConges", new[] { "Employe_Id" });
             DropTable("dbo.Remunerations");
             DropTable("dbo.Cotisations");

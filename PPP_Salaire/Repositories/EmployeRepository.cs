@@ -38,7 +38,7 @@ namespace PPP_Salaire.Repositories
 
         public int GetByLogin(string login)
         {
-            return db.Employes.Where(d => d.Login == login).FirstOrDefault().Id;
+            return db.Employes.Where(d => d.login == login).FirstOrDefault().Id;
         }
 
         public string Select()
@@ -61,8 +61,8 @@ namespace PPP_Salaire.Repositories
                 employes.Add(new Employe()
                 {
                     Id = rdr.GetInt32(rdr.GetOrdinal("Id")),
-                    Login = rdr.GetString(rdr.GetOrdinal("Login")),
-                    Password = rdr.GetString(rdr.GetOrdinal("Password")),
+                    login = rdr.GetString(rdr.GetOrdinal("Login")),
+                    password = rdr.GetString(rdr.GetOrdinal("Password")),
                     Nom = rdr.GetString(rdr.GetOrdinal("Nom")),
                     Prenom = rdr.GetString(rdr.GetOrdinal("Prenom")),
                     Adresse = rdr.GetString(rdr.GetOrdinal("Adresse")),
