@@ -9,7 +9,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Startmin - Bootstrap Admin Theme</title>
+    <title>PPP GRH</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="AdminTempL/css/bootstrap.min.css" rel="stylesheet" />
@@ -156,7 +156,7 @@
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i>Parametrage<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="ParametrerSalaire.aspx">Salaire</a>
+                                    <a href="ParametrerSalaireV2.aspx">Salaire</a>
                                 </li>
                                 <li>
                                     <a href="AjouterConge.aspx">Conge</a>
