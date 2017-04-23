@@ -17,7 +17,6 @@ namespace PPP_Salaire
     {
         IEmployeRepository employeRepository = new EmployeRepository();
         DBContext employeeDBContext = new DBContext();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             string employeId = Request.QueryString["Id"];
@@ -30,7 +29,6 @@ namespace PPP_Salaire
 
             }
         }
-
         private void GetChartTypes()
         {
             foreach (int chartType in Enum.GetValues(typeof(SeriesChartType)))
@@ -39,13 +37,11 @@ namespace PPP_Salaire
                 DropDownList1.Items.Add(li);
             }
         }
-
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Chart.Series["Series1"].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), DropDownList1.SelectedValue);
             GetData();
         }
-
         private void GetData()
         {
             string connetionString = ConfigurationManager.ConnectionStrings["PPPConnectionString"].ConnectionString;

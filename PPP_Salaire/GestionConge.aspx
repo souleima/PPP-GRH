@@ -35,7 +35,7 @@
                         <td colspan="2">
                             <center>
                                 <br />
-                <asp:Button runat="server" Width="200px" ID="btnSearch" Text="Search" OnClick="FilterResult" />
+                <asp:Button  class="mybtn" runat="server" Width="200px" ID="btnSearch" Text="Search" OnClick="FilterResult" />
                                 </center>
                         </td>
                     </tr>

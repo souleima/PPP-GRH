@@ -9,10 +9,13 @@ namespace PPP_Salaire
 {
     public partial class pppMaster : System.Web.UI.MasterPage
     {
+
+        public string user;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            user = Session["user"].ToString();
 
-            login_label.Text = Session["user"].ToString();
             if (Session["user"].ToString() != "admin")
             {
                 GestionSalaireitem.Visible = false;

@@ -9,6 +9,8 @@ using PPP_Salaire.Repositories;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
+using System.Drawing;
 
 namespace PPP_Salaire
 {
@@ -31,8 +33,7 @@ namespace PPP_Salaire
             {
                 string connetionString = ConfigurationManager.ConnectionStrings["PPPConnectionString"].ConnectionString;
                 //charger les demandes de conges correspondantes à ce user
-                this.GridViewDemandesConge.DataSource = this.demandeCongeRep.ListerById(IdUser);
-                this.GridViewDemandesConge.DataBind();
+                BindGrid();
                 //Specify the connectionString , insert, select cmd of the formView
                 SqlDSForm.SelectCommand = demandeCongeRep.Select();
                 SqlDSForm.ConnectionString = connetionString;
@@ -48,6 +49,12 @@ namespace PPP_Salaire
                 DropDownListColumn.DataTextField = "COLUMN_NAME";
                 DropDownListColumn.DataBind();
             }
+        }
+        private void BindGrid()
+        {
+            //charger les demandes de conges correspondantes à ce user
+            this.GridViewDemandesConge.DataSource = this.demandeCongeRep.ListerById(IdUser);
+            this.GridViewDemandesConge.DataBind();
         }
         //supprimer demande si son status est "EN_ATTENTE" par clik sur le boutton "Annuler"
         protected void BtAnuulerDemande_Click(object sender, EventArgs e)
@@ -152,6 +159,58 @@ namespace PPP_Salaire
 
                 }
             }
+        }
+        //charger la gridView dans un fichier excel
+        protected void ExportToExcel(object sender, EventArgs e)
+        {
+            Response.Clear();
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", "attachment;filename=GridViewExport.xls");
+            Response.Charset = "";
+            Response.ContentType = "application/vnd.ms-excel";
+            using (StringWriter sw = new StringWriter())
+            {
+                HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+                //To Export all pages
+                GridViewDemandesConge.AllowPaging = false;
+                this.BindGrid();
+
+                GridViewDemandesConge.HeaderRow.BackColor = Color.White;
+                foreach (TableCell cell in GridViewDemandesConge.HeaderRow.Cells)
+                {
+                    cell.BackColor = GridViewDemandesConge.HeaderStyle.BackColor;
+                }
+                foreach (GridViewRow row in GridViewDemandesConge.Rows)
+                {
+                    row.BackColor = Color.White;
+                    foreach (TableCell cell in row.Cells)
+                    {
+                        if (row.RowIndex % 2 == 0)
+                        {
+                            cell.BackColor = GridViewDemandesConge.AlternatingRowStyle.BackColor;
+                        }
+                        else
+                        {
+                            cell.BackColor = GridViewDemandesConge.RowStyle.BackColor;
+                        }
+                        cell.CssClass = "textmode";
+                    }
+                }
+
+                GridViewDemandesConge.RenderControl(hw);
+
+                //style to format numbers to string
+                string style = @"<style> .textmode { } </style>";
+                Response.Write(style);
+                Response.Output.Write(sw.ToString());
+                Response.Flush();
+                Response.End();
+            }
+        }
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            //  Confirms that an HtmlForm control is rendered for the specified ASP.NET server control at run time.
         }
     }
 }

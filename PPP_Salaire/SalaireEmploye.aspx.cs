@@ -192,7 +192,6 @@ namespace PPP_Salaire
                 }
             }
         }
-
         protected void BtnCalculerSalaire_Click(object sender, EventArgs e)
         {
             string regle = "";
@@ -250,7 +249,6 @@ namespace PPP_Salaire
             this.LblNetAPayer.Text = v.ToString();
 
         }
-
         protected void BtnSauvgarder_Click(object sender, EventArgs e)
         {
             Employe employe = (Employe)ViewState["employe"];
@@ -273,7 +271,6 @@ namespace PPP_Salaire
             this.employeRepository.Update(employe);
             imprimer();
         }
-
         private void imprimer()
         {
             var document = new Document(PageSize.A4, 50, 50, 25, 25);
@@ -396,7 +393,6 @@ namespace PPP_Salaire
             Response.AddHeader("Content-Disposition", string.Format("attachment;filename=salaire.pdf"));
             Response.BinaryWrite(output.ToArray());
         }
-
         private Dictionary<string, string> getInputs(Control control, string entityName)
         {
             Dictionary<string, string> inputsDictionnary = new Dictionary<string, string>();
@@ -416,7 +412,6 @@ namespace PPP_Salaire
 
             return inputsDictionnary;
         }
-
         private Dictionary<string, string> getLabels(Control control, string entityName)
         {
             Dictionary<string, string> labelsDictionnary = new Dictionary<string, string>();

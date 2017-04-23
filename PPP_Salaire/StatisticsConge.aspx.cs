@@ -1,9 +1,16 @@
 ﻿using System;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Web.UI.DataVisualization.Charting;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.Web.UI.DataVisualization.Charting;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace PPP_Salaire
 {
@@ -23,7 +30,7 @@ namespace PPP_Salaire
         {
             foreach (int chartType in Enum.GetValues(typeof(SeriesChartType)))
             {
-                ListItem li = new ListItem(Enum.GetName(typeof(SeriesChartType), chartType), chartType.ToString());
+                System.Web.UI.WebControls.ListItem li = new System.Web.UI.WebControls.ListItem(Enum.GetName(typeof(SeriesChartType), chartType), chartType.ToString());
                 DropDownList1.Items.Add(li);
             }
         }
@@ -115,5 +122,27 @@ namespace PPP_Salaire
             Chart.Series["Series1"].XValueMember = DropDownListX.SelectedValue;
             Chart.Series["Series1"].YValueMembers = DropDownListY.SelectedValue;
         }
+        //Working on this ...................
+        protected void btnExportPDF_Click(object sender, EventArgs e)
+        {
+            Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+            PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
+            pdfDoc.Open();
+            using (MemoryStream stream = new MemoryStream())
+            {
+                this.Chart.SaveImage(stream, ChartImageFormat.Png);
+                iTextSharp.text.Image chartImage = iTextSharp.text.Image.GetInstance(stream.GetBuffer());
+                chartImage.ScalePercent(75f);
+                pdfDoc.Add(chartImage);
+                pdfDoc.Close();
+
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("content-disposition", "attachment;filename=Chart.pdf");
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.Write(pdfDoc);
+                Response.End();
+            }
+        }
+
     }
 }

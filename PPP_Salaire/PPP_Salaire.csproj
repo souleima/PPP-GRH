@@ -170,6 +170,7 @@
     <Content Include="Content\layouts\Empty\EmptyLayout.js" />
     <Content Include="Default.aspx" />
     <Content Include="DemanderConge.aspx" />
+    <Content Include="down_arrow_select.jpg" />
     <Content Include="GestionCategorie.aspx" />
     <Content Include="GestionConge.aspx" />
     <Content Include="GestionEmploye.aspx" />

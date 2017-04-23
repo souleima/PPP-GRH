@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pppMaster.Master" AutoEventWireup="true" CodeBehind="StatisticsConge.aspx.cs" Inherits="PPP_Salaire.StatisticsConge" %>
+
 <%@ Register Assembly="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headPlaceHolder" runat="server">
     <style type="text/css">
         .auto-style1 {
             height: 100%;
-            width : 100%;
+            width: 100%;
         }
     </style>
 </asp:Content>
@@ -50,7 +51,7 @@
                        <td colspan="2">
                            <center>
                                <br />
-                <asp:Button ID="BtChart" runat="server" Text="Show Chart" Width="200px" OnClick="BtChart_Click" />
+                <asp:Button class="mybtn" ID="BtChart" runat="server" Text="Show Chart" Width="200px" OnClick="BtChart_Click" />
                                </center>
                            </td>
                        </tr>
@@ -82,7 +83,9 @@
                          <asp:SqlDataSource ID="SqlDSChart" runat="server"></asp:SqlDataSource>
                     </td>
                 </tr>
-            </table>            
+            </table>    
+                    
+<asp:Button ID="btnExportPDF" runat="server" Text="Export to PDF" onclick="btnExportPDF_Click" />
                 </center>
             </div>
         </div>

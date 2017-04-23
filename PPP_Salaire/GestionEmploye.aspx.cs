@@ -13,21 +13,15 @@ namespace PPP_Salaire
 {
     public partial class GestionEmploye : System.Web.UI.Page
     {
-
-      
         protected void Show_Click(object sender, EventArgs e)
         {
 
           
         }
-
-     
-
         protected void Add_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/AddEmployer.aspx");
         }
-
         protected void GridViewEmployer_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = this.GridViewEmployer.SelectedRow;

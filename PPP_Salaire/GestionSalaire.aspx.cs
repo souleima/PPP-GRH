@@ -21,20 +21,17 @@ namespace PPP_Salaire
                 this.GridViewEmploye.DataBind();
             }
         }
-
         protected void GridViewEmploye_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             this.GridViewEmploye.PageIndex = e.NewPageIndex;
             this.GridViewEmploye.DataSource = this.employeRepository.Lister();
             this.GridViewEmploye.DataBind();
         }
-
         protected void GridViewEmploye_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = this.GridViewEmploye.SelectedRow;
             Response.Redirect("~/SalaireEmploye.aspx?Id=" + row.Cells[1].Text);
         }
-
         //http://stackoverflow.com/questions/3757946/how-to-change-the-header-text-of-gridview-after-databound
         //http://stackoverflow.com/questions/14260753/get-the-gridview-column-header-text-always-returns-blank
         //http://stackoverflow.com/questions/16268996/asp-net-gridview-header-row-text-empty-when-allowsorting-enabled

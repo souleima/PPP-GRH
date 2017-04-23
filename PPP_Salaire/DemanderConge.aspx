@@ -1,9 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pppMaster.Master" AutoEventWireup="true" EnableViewState="true" CodeBehind="DemanderConge.aspx.cs" Inherits="PPP_Salaire.DemanderConge" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pppMaster.Master" EnableEventValidation="false" AutoEventWireup="true" EnableViewState="true" CodeBehind="DemanderConge.aspx.cs" Inherits="PPP_Salaire.DemanderConge" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headPlaceHolder" runat="server"></asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="headPlaceHolder" runat="server">
+   
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pageTiltleHolder" runat="server">
     Demande Conge
 </asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="PppContentPlaceHolder" runat="server">
 
     <form id="form1" runat="server">
@@ -16,8 +19,19 @@
                 <asp:Label ID="LabelExplanation" runat="server" Text="Veuillez selectionner deux dates: date debut et date fin du congé demandé (Il suffit de selectionner deux dates en cliquant sur le calendrier ci-dessous ) :"></asp:Label>
                 <br />
                 <br />
-                <asp:Calendar ID="Calendar" runat="server" OnDayRender="Calendar_DayRender" OnSelectionChanged="Calendar_SelectionChanged" Width="100%" Height="50%"></asp:Calendar>
-
+                <asp:Calendar ID="Calendar" runat="server" OnDayRender="Calendar_DayRender" OnSelectionChanged="Calendar_SelectionChanged" Width="100%" Height="300px" BackColor="White" BorderColor="#ffffff" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" NextPrevFormat="FullMonth" DayNameFormat="Shortest" TitleFormat="Month">
+                    <DayHeaderStyle Font-Bold="True" Font-Size="7pt" BackColor="#CCCCCC" ForeColor="#333333" Height="10pt" />
+                    <DayStyle Width="14%" />
+                    <NextPrevStyle Font-Size="8pt" ForeColor="White" />
+                    <OtherMonthDayStyle ForeColor="#999999" />
+                    <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
+                    <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
+                    <TitleStyle BackColor="#5D7B9D" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
+                    <TodayDayStyle BackColor="#CCCC99" />
+                </asp:Calendar>
+                
+                <br />
+                <br />
                 <br />
                 <table>
                     <tr>
@@ -25,7 +39,7 @@
                             <asp:Label ID="LabelList" runat="server" Text="Selectionner votre type de conge :"></asp:Label>
                         </td>
                         <td>
-                            <asp:DropDownList ID="DropDownList1" runat="server" Width="180px" DataSourceID="SqlDSList" DataTextField="Nom" DataValueField="Nom" OnSelectedIndexChanged="Page_Load">
+                            <asp:DropDownList ID="DropDownList1" class="styled-select" runat="server" Width="180px" DataSourceID="SqlDSList" DataTextField="Nom" DataValueField="Nom" OnSelectedIndexChanged="Page_Load">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -74,14 +88,14 @@
                 <table>
                     <tr>
                  <td><asp:Label ID="Label1" runat="server" Text="Selectionner la colonne sujet de recherche :"></asp:Label></td>
-                 <td><asp:DropDownList ID="DropDownListColumn" runat="server" Height="20px"  Width="200" ></asp:DropDownList></td>
+                 <td><asp:DropDownList ID="DropDownListColumn" class="styled-select" runat="server"  Width="200px" ></asp:DropDownList></td>
                     </tr>
                     <tr>
                  <td><asp:Label ID="Label4" runat="server" Text="saisir la chaine à rechercher :"></asp:Label></td>
-                 <td><asp:TextBox ID="TxId" Width="200px" runat="server" Height="20px"  /></td>
+                 <td><asp:TextBox ID="TxId" Width="200px" runat="server" /></td>
                         </tr>
                     <tr>
-                <td colspan ="2"><center> <asp:Button runat="server" ID="btnSearch" Width="200px" Text="Search" OnClick="FilterResult"/></center></td>
+                <td colspan ="2"><center> <br /> <asp:Button class="mybtn" runat="server" ID="btnSearch" Height="50px" Width="200px" Text="Search" OnClick="FilterResult"/></center></td>
                 </tr>
                 </table>
                     </center>
@@ -96,7 +110,7 @@
                     <Columns>
                         <asp:TemplateField HeaderText="Cancel">
                             <ItemTemplate>
-                                <asp:Button ID="BtAnuulerDemande" runat="server" Text="Annuler" Visible='<%# IsEnAttente((String)Eval("Status")) %>' OnClick="BtAnuulerDemande_Click" />
+                                <asp:Button class="mybtn" Height="50px" ID="BtAnuulerDemande" runat="server" Text="Annuler" Visible='<%# IsEnAttente((String)Eval("Status")) %>' OnClick="BtAnuulerDemande_Click" />
                                 <asp:HiddenField ID="HiddenFieldID" runat="server" Value='<%# Eval("Id") %>' />
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -113,6 +127,7 @@
                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
+                <asp:Button class="mybtn" ID="btnExport" runat="server" Text="Export To Excel" OnClick = "ExportToExcel" Width="100%" />
             </div>
         </div>
 
