@@ -142,10 +142,13 @@
     <Content Include="DemanderConge.aspx" />
     <Content Include="GestionCategorie.aspx" />
     <Content Include="GestionConge.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="GestionProfil.aspx" />
     <Content Include="GestionEmploye.aspx" />
     <Content Include="packages.config" />
+    <Content Include="ParametrerEmploye.aspx" />
     <Content Include="ParametrerSalaireV2.aspx" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Utilities\Scripts\jquery-1.9.1.min.map" />
     <Content Include="Content\MyCss.less" />
     <Content Include="pppMaster.Master" />
     <Content Include="AdminTempL\.gitignore" />
@@ -162,9 +165,11 @@
     <Content Include="AdminTempL\LICENSE" />
     <Content Include="AdminTempL\README.md" />
     <Content Include="XMLConfig\Cotisation.xml" />
+    <Content Include="XMLConfig\Employe.xml" />
     <Content Include="XMLConfig\regle.xml" />
     <Content Include="XMLConfig\Remuneration.xml" />
     <Content Include="XMLConfig\Salaire.xml" />
+    <Content Include="fieldsemploye.xml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -189,11 +194,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <None Include="Utilities\Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Utilities\Scripts\bootstrap.js" />
+    <Content Include="Utilities\Scripts\bootstrap.min.js" />
+    <Content Include="Utilities\Scripts\jquery-1.9.1.js" />
+    <Content Include="Utilities\Scripts\jquery-1.9.1.min.js" />
     <Content Include="StatisticsConge.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -257,6 +262,20 @@
     <Compile Include="GestionConge.aspx.designer.cs">
       <DependentUpon>GestionConge.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionProfil.aspx.cs">
+      <DependentUpon>GestionProfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionProfil.aspx.designer.cs">
+      <DependentUpon>GestionProfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionEmploye.aspx.cs">
       <DependentUpon>GestionEmploye.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -276,6 +295,13 @@
       <DependentUpon>201704181146188_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ParametrerEmploye.aspx.cs">
+      <DependentUpon>ParametrerEmploye.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ParametrerEmploye.aspx.designer.cs">
+      <DependentUpon>ParametrerEmploye.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ParametrerSalaire.aspx.cs">
       <DependentUpon>ParametrerSalaire.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -320,6 +346,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704181146188_Initial.resx">
       <DependentUpon>201704181146188_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametrerEmploye.aspx.resx">
+      <DependentUpon>ParametrerEmploye.aspx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParametrerSalaire.aspx.resx">
       <DependentUpon>ParametrerSalaire.aspx.cs</DependentUpon>

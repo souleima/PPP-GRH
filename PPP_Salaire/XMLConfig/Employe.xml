@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Employe>
+  <ByDefaults></ByDefaults>
+  <CheckedAttributes>
+    <CheckedAttribute>login</CheckedAttribute>
+    <CheckedAttribute>password</CheckedAttribute>
+    <CheckedAttribute>Nom</CheckedAttribute>
+    <CheckedAttribute>Prenom</CheckedAttribute>
+    <CheckedAttribute>Adresse</CheckedAttribute>
+  </CheckedAttributes>
+</Employe>

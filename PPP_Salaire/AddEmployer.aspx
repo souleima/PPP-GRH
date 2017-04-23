@@ -10,7 +10,7 @@
     <asp:Content ContentPlaceHolderID="PppContentPlaceHolder" runat="server">
 
         <form id="form1" runat="server">
-        <asp:FormView ID="FormView1" runat="server" AllowPaging="True" DataKeyNames="Id" DataSourceID="SqlDataSource2" DefaultMode="Insert" BackColor="Blue" CellSpacing="1" CssClass="table table-hover table-striped">
+        <asp:FormView ID="FormView1" runat="server" AllowPaging="True" DataKeyNames="Id" DataSourceID="SqlDataSource2" DefaultMode="Insert" BackColor="Blue" CellSpacing="1" CssClass="table table-hover table-striped" >
             <EditItemTemplate>
                 Nom:
                 <asp:TextBox ID="NomTextBox" runat="server" Text='<%# Bind("Nom") %>' />
@@ -33,14 +33,10 @@
                 password:
                 <asp:TextBox ID="passwordTextBox" runat="server" Text='<%# Bind("password") %>' />
                 <br />
-                Categorie_id_Id:
-                <asp:TextBox ID="Categorie_id_IdTextBox" runat="server" Text='<%# Bind("Categorie_id_Id") %>' />
-                <br />
                 Id:
                 <asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>' />
                 <br />
-                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Mettre à jour" />
-                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Annuler" />
+              <asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Annuler" />
             </EditItemTemplate>
             <InsertItemTemplate>
                 Nom:
@@ -64,11 +60,8 @@
                 password:
                 <asp:TextBox ID="passwordTextBox" runat="server" Text='<%# Bind("password") %>' />
                 <br />
-                Categorie_id_Id:
-                <asp:TextBox ID="Categorie_id_IdTextBox" runat="server" Text='<%# Bind("Categorie_id_Id") %>' />
-                <br />
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insérer" />
-                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Annuler" />
+                
+                <asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Annuler" />
             </InsertItemTemplate>
             <ItemTemplate>
           
@@ -95,15 +88,13 @@
                 password:
                 <asp:Label ID="passwordLabel" runat="server" Text='<%# Bind("password") %>' />
                 <br />
-                Categorie_id_Id:
-                <asp:Label ID="Categorie_id_IdLabel" runat="server" Text='<%# Bind("Categorie_id_Id") %>' />
-                <br />
                 Id:
                 <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
                 <br />
             </ItemTemplate>
         </asp:FormView>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" DeleteCommand="DELETE FROM [Employes] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Employes] ([Nom], [Prenom], [Adresse], [Num_SS], [Date_dEmbauche], [login], [password], [Categorie_id_Id]) VALUES (@Nom, @Prenom, @Adresse, @Num_SS, @Date_dEmbauche, @login, @password, @Categorie_id_Id)" SelectCommand="SELECT [Nom], [Prenom], [Adresse], [Num_SS], [Date_dEmbauche], [login], [password], [Categorie_id_Id], [Id] FROM [Employes]" UpdateCommand="UPDATE [Employes] SET [Nom] = @Nom, [Prenom] = @Prenom, [Adresse] = @Adresse, [Num_SS] = @Num_SS, [Date_dEmbauche] = @Date_dEmbauche, [login] = @login, [password] = @password, [Categorie_id_Id] = @Categorie_id_Id WHERE [Id] = @Id" EnableCaching="True">
+            <asp:Button ID="Button1" runat="server" Text="Ajouter" OnClick="Button1_Click" />
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" DeleteCommand="DELETE FROM [Employes] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Employes] ([Nom], [Prenom], [Adresse], [Num_SS], [Date_dEmbauche], [login], [password]) VALUES (@Nom, @Prenom, @Adresse, @Num_SS, @Date_dEmbauche, @login, @password)" SelectCommand="SELECT [Nom], [Prenom], [Adresse], [Num_SS], [Date_dEmbauche], [login], [password], [Id] FROM [Employes]" UpdateCommand="UPDATE [Employes] SET [Nom] = @Nom, [Prenom] = @Prenom, [Adresse] = @Adresse, [Num_SS] = @Num_SS, [Date_dEmbauche] = @Date_dEmbauche, [login] = @login, [password] = @password WHERE [Id] = @Id" EnableCaching="True">
             <DeleteParameters>
                 <asp:Parameter Name="Id" Type="Int32" />
             </DeleteParameters>
@@ -115,7 +106,6 @@
                 <asp:Parameter Name="Date_dEmbauche" Type="DateTime" />
                 <asp:Parameter Name="login" Type="String" />
                 <asp:Parameter Name="password" Type="String" />
-                <asp:Parameter Name="Categorie_id_Id" Type="Int32" />
             </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="Nom" Type="String" />
@@ -125,7 +115,6 @@
                 <asp:Parameter Name="Date_dEmbauche" Type="DateTime" />
                 <asp:Parameter Name="login" Type="String" />
                 <asp:Parameter Name="password" Type="String" />
-                <asp:Parameter Name="Categorie_id_Id" Type="Int32" />
                 <asp:Parameter Name="Id" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>

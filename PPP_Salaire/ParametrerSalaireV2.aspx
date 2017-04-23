@@ -6,7 +6,7 @@
     <!-- custom style goes here -->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pageTiltleHolder" runat="server">
-    Parametrer Salaire V2
+    Parametrer Salaire 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="PppContentPlaceHolder" runat="server">
 

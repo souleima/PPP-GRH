@@ -25,7 +25,7 @@
                 <asp:BoundField DataField="Adresse" HeaderText="Adresse" SortExpression="Adresse" />
                 <asp:BoundField DataField="Num_SS" HeaderText="Num_SS" SortExpression="Num_SS" />
                 <asp:BoundField DataField="Date_dEmbauche" HeaderText="Date_dEmbauche" SortExpression="Date_dEmbauche" />
-                <asp:BoundField DataField="Salaire_Id" HeaderText="Salaire_Id" SortExpression="Salaire_Id" />
+            
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
