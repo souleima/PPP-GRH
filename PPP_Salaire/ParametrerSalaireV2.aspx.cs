@@ -72,7 +72,6 @@ namespace PPP_Salaire
             }
 
         }
-
         private void RenderCheckBoxes(Type myEntity, CheckBoxList targetList)
         {
             foreach (var item in myEntity.GetProperties())
@@ -96,7 +95,6 @@ namespace PPP_Salaire
                 }
             }
         }
-
         private IList<string> getCheckedItems(CheckBoxList checkList)
         {
             IList<string> list = new List<string>();
@@ -121,7 +119,6 @@ namespace PPP_Salaire
             }
             return list;
         }
-
         protected void BtnSaisirRegle_Click(object sender, EventArgs e)
         {
             this.ChkListAttSalaire.Visible = false;
@@ -151,7 +148,6 @@ namespace PPP_Salaire
                     ((Button)item).Enabled = true;
             }
         }
-
         protected void BtnSelectAttSalaire_Click(object sender, EventArgs e)
         {
             if (this.ListBoxAttSalaire.SelectedIndex != -1)
@@ -162,7 +158,6 @@ namespace PPP_Salaire
             }
             majExpression();
         }
-
         protected void BtnSelectCotisation_Click(object sender, EventArgs e)
         {
             if (this.ListBoxCotisation.SelectedIndex != -1)
@@ -173,7 +168,6 @@ namespace PPP_Salaire
             }
             majExpression();
         }
-
         protected void BtnSelectRemuneration_Click(object sender, EventArgs e)
         {
             if (this.ListBoxRemuneration.SelectedIndex != -1)
@@ -184,7 +178,6 @@ namespace PPP_Salaire
             }
             majExpression();
         }
-
         private void majExpression()
         {
             this.ExpressionDiv.Controls.Clear();
@@ -245,9 +238,7 @@ namespace PPP_Salaire
                 this.ExpressionDiv.Controls.Add(lbl);
             }
         }
-
         //calculatrice
-
         protected void btn_1_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -255,7 +246,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_2_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -263,7 +253,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_3_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -271,7 +260,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_4_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -279,7 +267,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_5_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -287,7 +274,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_6_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -295,7 +281,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_7_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -303,7 +288,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_8_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -311,7 +295,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_9_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -319,7 +302,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_0_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -327,7 +309,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_po_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -335,7 +316,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_pf_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -343,7 +323,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_plus_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -351,7 +330,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_mult_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -359,7 +337,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_div_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -367,7 +344,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_moins_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -375,7 +351,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_0_Click1(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -383,7 +358,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_point_Click(object sender, EventArgs e)
         {
             ((IDictionary<int, string>)ViewState["expressionsArithmethiques"])
@@ -391,7 +365,6 @@ namespace PPP_Salaire
             ViewState["expressionsIndice"] = ((int)ViewState["expressionsIndice"]) + 1;
             majExpression();
         }
-
         protected void btn_supp_Click(object sender, EventArgs e)
         {
             if ((int)ViewState["expressionsIndice"] > 0)
@@ -449,7 +422,6 @@ namespace PPP_Salaire
                 majExpression();
             }
         }
-
         protected void BtnSauvgarder_Click(object sender, EventArgs e)
         {
             MyXMLUtilities.UpdateChosenAttributes(typeof(Salaire).Name, getNonDefaultCheckedItems(this.ChkListAttSalaire));

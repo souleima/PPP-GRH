@@ -17,7 +17,6 @@ namespace PPP_Salaire
             Session.Clear();
 
         }
-
         protected void btn_login_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["PPPConnectionString"].ToString());
