@@ -85,6 +85,24 @@ namespace PPP_Salaire {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl AddEmployeritem;
         
         /// <summary>
+        /// Contrôle Gestionprofil.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Gestionprofil;
+        
+        /// <summary>
+        /// Contrôle Changepassword.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Changepassword;
+        
+        /// <summary>
         /// Contrôle GestionCategorieitem.
         /// </summary>
         /// <remarks>

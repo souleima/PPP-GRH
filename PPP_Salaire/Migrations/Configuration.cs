@@ -9,6 +9,7 @@ namespace PPP_Salaire.Migrations
     {
         public Configuration()
         {
+            AutomaticMigrationDataLossAllowed = true;
             AutomaticMigrationsEnabled = true;
         }
 
