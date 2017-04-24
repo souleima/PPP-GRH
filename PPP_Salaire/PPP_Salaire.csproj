@@ -47,6 +47,7 @@
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=17.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <HintPath>..\packages\AjaxControlToolkit.17.1.0.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -60,13 +61,22 @@
       <HintPath>..\packages\iTextSharp.5.5.11\lib\itextsharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DataVisualization">
       <HintPath>..\packages\Microsoft.Chart.Controls.3.5.30729\lib\net35\System.Web.DataVisualization.dll</HintPath>
@@ -146,6 +156,7 @@
     <Content Include="AdminTempL\js\startmin.js" />
     <Content Include="AdminTempL\TEMPLATE.html" />
     <Content Include="Interface\AjouterConge.aspx" />
+    <Content Include="Interface\ChangePassword.aspx" />
     <Content Include="Interface\CongeEmploye.aspx" />
     <Content Include="Content\dx.android.holo-dark.css" />
     <Content Include="Content\dx.android.holo-light.css" />
@@ -170,10 +181,13 @@
     <Content Include="Content\layouts\Empty\EmptyLayout.js" />
     <Content Include="Interface\Default.aspx" />
     <Content Include="Interface\DemanderConge.aspx" />
+    <Content Include="fieldsemploye.xml" />
     <Content Include="Interface\GestionCategorie.aspx" />
     <Content Include="Interface\GestionConge.aspx" />
     <Content Include="Interface\GestionEmploye.aspx" />
+    <Content Include="Interface\GestionProfil.aspx" />
     <Content Include="Interface\packages.config" />
+    <Content Include="Interface\ParametrerEmploye.aspx" />
     <Content Include="Interface\ParametrerSalaireV2.aspx" />
     <Content Include="Content\MyCss.less" />
     <Content Include="Interface\pppMaster.Master" />
@@ -195,6 +209,7 @@
     <Content Include="Scripts\cldr\event.js" />
     <Content Include="Scripts\cldr\supplemental.js" />
     <Content Include="Scripts\cldr\unresolved.js" />
+    <Content Include="packages.config" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\devextreme-localization\dx.webappjs.de.js" />
     <Content Include="Scripts\devextreme-localization\dx.webappjs.ja.js" />
@@ -588,6 +603,7 @@
     <Content Include="Utilities\Scripts\jquery-1.9.1.js" />
     <Content Include="Utilities\Scripts\jquery-1.9.1.min.js" />
     <Content Include="XMLConfig\Cotisation.xml" />
+    <Content Include="XMLConfig\Employe.xml" />
     <Content Include="XMLConfig\regle.xml" />
     <Content Include="XMLConfig\Remuneration.xml" />
     <Content Include="XMLConfig\Salaire.xml" />
@@ -644,6 +660,13 @@
     <Compile Include="Interface\AjouterConge.aspx.designer.cs">
       <DependentUpon>AjouterConge.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Interface\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Interface\CongeEmploye.aspx.cs">
       <DependentUpon>CongeEmploye.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -694,6 +717,13 @@
     <Compile Include="Interface\GestionEmploye.aspx.designer.cs">
       <DependentUpon>GestionEmploye.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Interface\GestionProfil.aspx.cs">
+      <DependentUpon>GestionProfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interface\GestionProfil.aspx.designer.cs">
+      <DependentUpon>GestionProfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Interface\GestionSalaire.aspx.cs">
       <DependentUpon>GestionSalaire.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -701,11 +731,13 @@
     <Compile Include="Interface\GestionSalaire.aspx.designer.cs">
       <DependentUpon>GestionSalaire.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704232324330_intial.cs" />
-    <Compile Include="Migrations\201704232324330_intial.Designer.cs">
-      <DependentUpon>201704232324330_intial.cs</DependentUpon>
+    <Compile Include="Interface\ParametrerEmploye.aspx.cs">
+      <DependentUpon>ParametrerEmploye.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Interface\ParametrerEmploye.aspx.designer.cs">
+      <DependentUpon>ParametrerEmploye.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Interface\ParametrerSalaire.aspx.cs">
       <DependentUpon>ParametrerSalaire.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -727,6 +759,11 @@
     <Compile Include="Interface\pppMaster.Master.designer.cs">
       <DependentUpon>pppMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704240950178_mig1.cs" />
+    <Compile Include="Migrations\201704240950178_mig1.Designer.cs">
+      <DependentUpon>201704240950178_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CongeRepository.cs" />
     <Compile Include="Repositories\DemandeCongeRepositiry.cs" />
@@ -759,11 +796,14 @@
     <Compile Include="XMLConfig\MyXMLUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704232324330_intial.resx">
-      <DependentUpon>201704232324330_intial.cs</DependentUpon>
+    <EmbeddedResource Include="Interface\ParametrerEmploye.aspx.resx">
+      <DependentUpon>ParametrerEmploye.aspx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface\ParametrerSalaire.aspx.resx">
       <DependentUpon>ParametrerSalaire.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704240950178_mig1.resx">
+      <DependentUpon>201704240950178_mig1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

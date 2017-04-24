@@ -15,6 +15,7 @@ namespace PPP_Salaire
         protected void Page_Load(object sender, EventArgs e)
         {
             user = Session["user"].ToString();
+            login_label.Text = user;
 
             if (Session["user"].ToString() != "admin")
             {

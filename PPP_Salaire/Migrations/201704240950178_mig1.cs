@@ -3,7 +3,7 @@ namespace PPP_Salaire.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class intial : DbMigration
+    public partial class mig1 : DbMigration
     {
         public override void Up()
         {
