@@ -24,7 +24,7 @@ namespace PPP_Salaire.Entities
         public DateTime Date_dEmbauche { get; set; }
 
         public Categorie Categorie_id { get; set; }
-        public Salaire Salaire { get; set; }
+        public virtual Salaire Salaire { get; set; }
         public List<DemandeConge> DemandeConges { get; set; }
     }
 }

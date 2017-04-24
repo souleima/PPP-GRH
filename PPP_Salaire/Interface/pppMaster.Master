@@ -1,0 +1,214 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="pppMaster.master.cs" Inherits="PPP_Salaire.pppMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Startmin - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../AdminTempL/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- MetisMenu CSS -->
+    <link href="../AdminTempL/css/metisMenu.min.css" rel="stylesheet"/>
+
+    <!-- Timeline CSS -->
+    <link href="../AdminTempL/css/timeline.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link href="../AdminTempL/css/startmin.css" rel="stylesheet"/>
+    <!-- DataTables CSS -->
+    <link href="../AdminTempL/css/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="../AdminTempL/css/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../AdminTempL/css/morris.css" rel="stylesheet"/>
+
+    <!-- Custom Fonts -->
+    <link href="../AdminTempL/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <asp:ContentPlaceHolder ID="headPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Top Navigation: Left Menu -->
+         
+
+            <!-- Top Navigation: Right Menu -->
+            <ul class="nav navbar-right navbar-top-links">
+                <li class="dropdown navbar-inverse">
+                 
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i>New Comment
+                               
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+
+                 <asp:Label ID="login_label"  runat="server" Text="login_label"></asp:Label>
+                   <li><a href="Default.aspx"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                        </li>
+                    
+                </li>
+              
+            </ul>
+
+            <!-- Sidebar -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="GestionSalaireitem" runat="server">
+                            <a href="GestionSalaire.aspx" class="active"><i class="fa fa-dashboard fa-fw"></i>Gérer les salaires</a>
+                        </li>
+                        <li id="GestionCongeitem" runat="server">
+                            <a href="GestionConge.aspx" class="active"><i class="fa fa-dashboard fa-fw"></i>Gérer les congés</a>
+                        </li>
+                        <ul class="nav nav-second-level">
+                                <li id="StatisticsConge" runat="server">
+                                    <a href="StatisticsConge.aspx">Statistique</a>
+                                </li>
+
+                                 </ul>
+                                <li id="DemanderCongeitem" runat="server">
+                            <a href="DemanderConge.aspx" class="active"><i class="fa fa-dashboard fa-fw"></i>Demander Congé</a>
+                        </li>
+                           <li id="GestionEmployeitem" runat="server">
+                            <a href="GestionEmploye.aspx" class="active"><i class="fa fa-dashboard fa-fw"></i>Gérer les employées</a>
+                        </li>
+                                 <ul class="nav nav-second-level">
+                                <li id="AddEmployeritem" runat="server">
+                                    <a href="AddEmployer.aspx">Ajouter employé</a>
+                                </li>
+                                  <li id="Gestionprofil" runat="server">
+                                    <a href="GestionProfil.aspx">Consulter mon profil</a>
+                                </li>
+                                       <li id="Changepassword" runat="server">
+                                    <a href="ChangePassword.aspx">Changer mot de passe</a>
+                                </li>
+                                 </ul>
+                           <li id="GestionCategorieitem" runat="server">
+                            <a href="GestionCategorie.aspx" class="active"><i class="fa fa-dashboard fa-fw"></i>Gérer les Catégories</a>
+                        </li>
+                          <ul class="nav nav-second-level">
+                                <li id="AddCategoryitem" runat="server">
+                                    <a href="AddCategory.aspx">Ajouter catégorie</a>
+                                </li>
+
+                                 </ul>
+
+                        <li id="parametrage" runat="server">
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Parametrage<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="ParametrerSalaireV2.aspx">Salaire</a>
+                                </li>
+                                 <li>
+                                    <a href="ParametrerEmploye.aspx">Employé</a>
+                                </li>
+                                <%--<li>
+                                    <a href="#">Third Level <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                    </ul>
+                                </li>--%>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            <asp:ContentPlaceHolder ID="pageTiltleHolder" runat="server"></asp:ContentPlaceHolder>
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- ... Your content goes here ... -->
+                <asp:ContentPlaceHolder ID="PppContentPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="AdminTempL/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="AdminTempL/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="AdminTempL/js/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="AdminTempL/js/startmin.js"></script>
+
+</body></html>
+

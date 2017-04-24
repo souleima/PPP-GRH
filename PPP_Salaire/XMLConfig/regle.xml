@@ -1,24 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<regle>
-  <Salaire>Salaire de base</Salaire>
-  <Arithmetique>+</Arithmetique>
-  <Salaire>Heures travaillées</Salaire>
-  <Arithmetique>*</Arithmetique>
-  <Arithmetique>0</Arithmetique>
-  <Arithmetique>.</Arithmetique>
-  <Arithmetique>8</Arithmetique>
-  <Arithmetique>+</Arithmetique>
-  <Salaire>Heures retards</Salaire>
-  <Arithmetique>*</Arithmetique>
-  <Arithmetique>0</Arithmetique>
-  <Arithmetique>.</Arithmetique>
-  <Arithmetique>7</Arithmetique>
-  <Arithmetique>+</Arithmetique>
-  <Remuneration>Remboursement transports en commun</Remuneration>
-  <Arithmetique>-</Arithmetique>
-  <Cotisation>Cotisations retraite supplémentaire</Cotisation>
-  <Arithmetique>-</Arithmetique>
-  <Cotisation>Cotisation CSG déductible</Cotisation>
-  <Arithmetique>-</Arithmetique>
-  <Cotisation>Cotisations Urssaf</Cotisation>
-</regle>
+<regle />
