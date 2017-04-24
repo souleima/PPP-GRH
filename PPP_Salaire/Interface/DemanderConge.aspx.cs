@@ -129,7 +129,7 @@ namespace PPP_Salaire
             Page page = HttpContext.Current.Handler as Page;
             if (page != null)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('" + msg + "'); window.location='" + Request.ApplicationPath + "DemanderConge.aspx';", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('" + msg + "'); window.location='" + Request.ApplicationPath + "Interface/DemanderConge.aspx';", true);
 
             }
         }

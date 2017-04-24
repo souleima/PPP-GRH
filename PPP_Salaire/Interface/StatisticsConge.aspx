@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pppMaster.Master" AutoEventWireup="true" CodeBehind="StatisticsConge.aspx.cs" Inherits="PPP_Salaire.StatisticsConge" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Interface/pppMaster.Master" AutoEventWireup="true" CodeBehind="StatisticsConge.aspx.cs" Inherits="PPP_Salaire.StatisticsConge" %>
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headPlaceHolder" runat="server">
@@ -28,30 +28,31 @@
                             <br />
                             </td>
                         <td>
-                <asp:DropDownList ID="DropDownListTable" runat="server" AutoPostBack="True" Width="200px" OnSelectedIndexChanged="DropDownListTable_SelectedIndexChanged"></asp:DropDownList>
+                <asp:DropDownList ID="DropDownListTable" CssClass="form-control" runat="server" AutoPostBack="True" Width="200px" OnSelectedIndexChanged="DropDownListTable_SelectedIndexChanged"></asp:DropDownList>
                             </td>
                         </tr>
                     <tr>
                 <td><asp:Label ID="Label2" runat="server" Text="Selectionner Colonne pour recuperer les valeurs pour l'axe des X : "></asp:Label><br /></td>
-                <td><asp:DropDownList ID="DropDownListX" runat="server" Width="200px" ></asp:DropDownList></td>
+                <td><asp:DropDownList ID="DropDownListX" CssClass="form-control" runat="server" Width="200px" ></asp:DropDownList></td>
                 </tr>
                     <tr>
                 <td><asp:Label ID="Label3" runat="server" Text="Selectionner Colonne pour recuperer les valeurs pour l'axe des Y :"></asp:Label><br /></td>
-                <td><asp:DropDownList ID="DropDownListY" Width="200px" runat="server"></asp:DropDownList></td>
+                <td><asp:DropDownList ID="DropDownListY" CssClass="form-control" Width="200px" runat="server"></asp:DropDownList></td>
                 </tr>
                     <tr>
                 <td><asp:Label ID="Label4" runat="server" Text=" Taper le texte desirée pour l'axe des X : "></asp:Label><br /></td>
-                <td><asp:TextBox ID="tbX" runat="server" Width="200px"></asp:TextBox></td>
+                <td><asp:TextBox ID="tbX" runat="server" CssClass="form-control" Width="200px"></asp:TextBox></td>
                 </tr>
                     <tr>
                 <td><asp:Label ID="Label5" runat="server" Text=" Taper le texte desirée pour l'axe des Y : "></asp:Label><br /></td>
-                <td><asp:TextBox ID="tbY" runat="server" Width="200px"></asp:TextBox></td>
+                <td><asp:TextBox ID="tbY" runat="server"  CssClass="form-control" Width="200px"></asp:TextBox></td>
                 </tr>
                    <tr>
                        <td colspan="2">
                            <center>
                                <br />
-                <asp:Button class="mybtn" ID="BtChart" runat="server" Text="Show Chart" Width="200px" OnClick="BtChart_Click" />
+                <asp:Button CssClass="btn btn-primary" ID="BtChart" runat="server" Text="Show Chart" Width="200px" OnClick="BtChart_Click" />
+                               <br /><br />
                                </center>
                            </td>
                        </tr>
@@ -64,7 +65,7 @@
                         <b> Select Chart Type</b>
                     </td>
                     <td>
-                        <asp:DropDownList ID="DropDownList1" AutoPostBack="true" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:DropDownList ID="DropDownList1" CssClass="form-control" AutoPostBack="true" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
@@ -85,7 +86,7 @@
                 </tr>
             </table>    
                     
-<asp:Button ID="btnExportPDF" runat="server" Text="Export to PDF" onclick="btnExportPDF_Click" />
+<asp:Button ID="btnExportPDF" CssClass="btn btn-primary" runat="server" Text="Export to PDF" onclick="btnExportPDF_Click" />
                 </center>
             </div>
         </div>

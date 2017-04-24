@@ -22,16 +22,16 @@ namespace PPP_Salaire
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["PPPConnectionString"].ToString());
             conn.Open();
             string query = " select count(*) from Employes where login='" + logintext.Text + "' and  password='" + password.Text + "'";
-            SqlCommand cmd = new SqlCommand(query,conn);
+            SqlCommand cmd = new SqlCommand(query, conn);
             string output = cmd.ExecuteScalar().ToString();
             if (output == "1")
             {
 
                 Session["user"] = logintext.Text;
-                Response.Redirect("DemanderConge.aspx");
+                Response.Redirect("~/Interface/DemanderConge.aspx");
             }
             else
-                Faillogin.Text="Login Failed";
+                Faillogin.Text = "Login Failed";
 
 
         }

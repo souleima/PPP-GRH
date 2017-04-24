@@ -44,7 +44,7 @@ namespace PPP_Salaire
         protected void GridViewEmploye_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = this.GridViewEmploye.SelectedRow;
-            Response.Redirect("~/SalaireEmploye.aspx?Id=" + row.Cells[1].Text);
+            Response.Redirect("~/Interface/SalaireEmploye.aspx?Id=" + row.Cells[1].Text);
         }
         //http://stackoverflow.com/questions/3757946/how-to-change-the-header-text-of-gridview-after-databound
         //http://stackoverflow.com/questions/14260753/get-the-gridview-column-header-text-always-returns-blank

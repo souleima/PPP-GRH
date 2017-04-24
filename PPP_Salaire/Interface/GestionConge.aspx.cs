@@ -42,7 +42,7 @@ namespace PPP_Salaire
         protected void GridViewEmploye_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = this.GridViewEmploye.SelectedRow;
-            Response.Redirect("~/CongeEmploye.aspx?Id=" + row.Cells[1].Text);
+            Response.Redirect("~/Interface/CongeEmploye.aspx?Id=" + row.Cells[1].Text);
         }
         //attacher les donnens aux lignes de la gridView
         protected void GridViewEmploye_RowDataBound(object sender, GridViewRowEventArgs e)

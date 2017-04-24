@@ -1,6 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<regle>
-  <Salaire>Salaire de base</Salaire>
-  <Arithmetique>+</Arithmetique>
-  <Cotisation>Cotisations Urssaf</Cotisation>
-</regle>
+<regle />

@@ -1,26 +1,33 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pppMaster.Master" AutoEventWireup="true" CodeBehind="GestionConge.aspx.cs" Inherits="PPP_Salaire.GestionConge" %>
+﻿<%@ Page MasterPageFile="~/Interface/pppMaster.Master" Language="C#" AutoEventWireup="true" CodeBehind="GestionSalaire.aspx.cs" Inherits="PPP_Salaire.GestionSalaire" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headPlaceHolder" runat="server"></asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="pageTiltleHolder" runat="server">
-    Gestion Conge
+<asp:Content ContentPlaceHolderID="headPlaceHolder" runat="server">
+    <!--  <link href="Content/bootstrap.min.css" rel="stylesheet" />-->
+    <link href="Content/MyCss.less" rel="stylesheet" />
+    <style>
+    </style>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="PppContentPlaceHolder" runat="server">
 
+<asp:Content ContentPlaceHolderID="pageTiltleHolder" runat="server">
+    Gestion Salaire
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="PppContentPlaceHolder" runat="server">
     <form id="form1" runat="server">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Liste des employes
+           
             </div>
             <div class="panel-body">
                 <br />
                 <center>
-                    <table>
+                <table>
                     <tr>
                         <td>
                             <asp:Label ID="Label1" runat="server" Text="Selectionner la colonne sujet de recherche :"></asp:Label>
                         </td>
                         <td>
-                            <asp:DropDownList ID="DropDownList1" Width="200px" runat="server"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownListRecherche" Width="200px" runat="server"></asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
@@ -28,20 +35,25 @@
                             <asp:Label ID="Label2" runat="server" Text="saisir la chaine à rechercher :"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TxId" Width="200px" runat="server" />
+                            <asp:TextBox ID="TxtArechrcher" Width="200px" runat="server" CssClass="form-control" />
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <center>
                                 <br />
-                <asp:Button  class="mybtn" runat="server" Width="200px" ID="btnSearch" Text="Search" OnClick="FilterResult" />
+                <asp:Button runat="server" Width="150px" ID="btnSearch" Text="Search"
+                    CssClass="btn btn-primary" OnClick="btnSearch_Click"/>
+                <asp:Button runat="server" Width="150px" ID="BtnReset" Text="Reset"
+                    CssClass="btn btn-default" OnClick="btnReset_Click"/>
                                 </center>
                         </td>
                     </tr>
                 </table>
-                    <br />
-                </center>
+                    </center>
+                <br />
+
+
                 <asp:GridView ID="GridViewEmploye" runat="server" AllowPaging="True" PageSize="7"
                     AllowSorting="True" OnPageIndexChanging="GridViewEmploye_PageIndexChanging"
                     AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridViewEmploye_SelectedIndexChanged"
@@ -62,5 +74,4 @@
             </div>
         </div>
     </form>
-
 </asp:Content>

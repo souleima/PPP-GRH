@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pppMaster.Master" AutoEventWireup="true" CodeBehind="ParametrerSalaireV2.aspx.cs" Inherits="PPP_Salaire.ParametrerSalaireV2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Interface/pppMaster.Master" AutoEventWireup="true" CodeBehind="ParametrerSalaireV2.aspx.cs" Inherits="PPP_Salaire.ParametrerSalaireV2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headPlaceHolder" runat="server">
     <style>

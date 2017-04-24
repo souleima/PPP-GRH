@@ -25,7 +25,7 @@ namespace PPP_Salaire
             string employeId = Request.QueryString["Id"];
             Employe employe = this.employeRepository.GetById(Convert.ToInt32(employeId));
             if (employe == null)
-                Response.Redirect("~/GestionSalaire.aspx");
+                Response.Redirect("~/Interface/GestionSalaire.aspx");
             if (employe.Salaire == null)
             {
                 employe.Salaire = new Salaire();

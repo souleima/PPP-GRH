@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pppMaster.Master" EnableEventValidation="false" AutoEventWireup="true" EnableViewState="true" CodeBehind="DemanderConge.aspx.cs" Inherits="PPP_Salaire.DemanderConge" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Interface/pppMaster.Master" EnableEventValidation="false" AutoEventWireup="true" EnableViewState="true" CodeBehind="DemanderConge.aspx.cs" Inherits="PPP_Salaire.DemanderConge" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headPlaceHolder" runat="server">
-   
+   <link href="../Content/MyCss.less" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pageTiltleHolder" runat="server">
     Demande Conge
@@ -36,21 +36,21 @@
                 <table>
                     <tr>
                         <td>
-                            <asp:Label ID="LabelList" runat="server" Text="Selectionner votre type de conge :"></asp:Label>
+                            <asp:Label ID="LabelList" CssClass="form-control" runat="server" Text="Selectionner votre type de conge :"></asp:Label>
                         </td>
                         <td>
-                            <asp:DropDownList ID="DropDownList1" class="styled-select" runat="server" Width="180px" DataSourceID="SqlDSList" DataTextField="Nom" DataValueField="Nom" OnSelectedIndexChanged="Page_Load">
+                            <asp:DropDownList ID="DropDownList1" CssClass="form-control" class="styled-select" runat="server" Width="180px" DataSourceID="SqlDSList" DataTextField="Nom" DataValueField="Nom" OnSelectedIndexChanged="Page_Load">
                             </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <asp:Label ID="Label2" runat="server" Text="Taper la raison pour cette demande :"></asp:Label>
+                            <asp:Label ID="Label2" CssClass="form-control" runat="server" Text="Taper la raison pour cette demande :"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <asp:FormView ID="FormDemande" runat="server" DefaultMode="Insert" DataSourceID="SqlDSForm" OnItemInserted="FormDemande_ItemInserted" OnItemInserting="FormDemande_ItemInserting">
+                            <asp:FormView ID="FormDemande" CssClass="form-control" runat="server" DefaultMode="Insert" DataSourceID="SqlDSForm" OnItemInserted="FormDemande_ItemInserted" OnItemInserting="FormDemande_ItemInserting">
                                 <EditItemTemplate>
                                     Raison:
                 <asp:TextBox ID="RaisonTextBox" runat="server" Text='<%# Bind("Raison") %>' />
@@ -72,6 +72,7 @@
 
                                 </ItemTemplate>
                             </asp:FormView>
+                            <br /><br />
                         </td>
                     </tr>
                 </table>
@@ -95,7 +96,7 @@
                  <td><asp:TextBox ID="TxId" Width="200px" runat="server" CssClass="form-control" /></td>
                         </tr>
                     <tr>
-                <td colspan ="2"><center> <br /> <asp:Button class="mybtn" runat="server" CssClass="form-control" ID="btnSearch" Height="50px" Width="200px" Text="Search" OnClick="FilterResult"/></center></td>
+                <td colspan ="2"><center> <br /> <asp:Button  CssClass="btn btn-primary" runat="server" ID="btnSearch" Height="50px" Width="200px" Text="Search" OnClick="FilterResult"/></center></td>
                 </tr>
                 </table>
                     </center>
@@ -106,11 +107,12 @@
                 <asp:GridView ID="GridViewDemandesConge" runat="server" AllowPaging="True" PageSize="7"
                     AllowSorting="True" OnPageIndexChanging="GridViewEmploye_PageIndexChanging" OnRowDataBound="GridViewEmploye_RowDataBound"
                     CellPadding="4" ForeColor="#333333" GridLines="None"
-                    CssClass="table table-hover">
+                    CssClass="table table-hover"
+                    class="table table-striped table-bordered table-hover" >
                     <Columns>
                         <asp:TemplateField HeaderText="Cancel">
                             <ItemTemplate>
-                                <asp:Button class="mybtn" Height="50px" ID="BtAnuulerDemande" runat="server" Text="Annuler" Visible='<%# IsEnAttente((String)Eval("Status")) %>' OnClick="BtAnuulerDemande_Click" />
+                                <asp:Button class="btn btn-danger" Height="50px" ID="BtAnuulerDemande" runat="server" Text="Annuler" Visible='<%# IsEnAttente((String)Eval("Status")) %>' OnClick="BtAnuulerDemande_Click" />
                                 <asp:HiddenField ID="HiddenFieldID" runat="server" Value='<%# Eval("Id") %>' />
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -127,7 +129,7 @@
                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
-                <asp:Button class="mybtn" ID="btnExport" runat="server" Text="Export To Excel" OnClick = "ExportToExcel" Width="100%" />
+                <asp:Button class="btn btn-primary btn-lg btn-block"  ID="btnExport" runat="server" Text="Export To Excel" OnClick = "ExportToExcel" Width="100%" />
             </div>
         </div>
 

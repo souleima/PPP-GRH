@@ -38,7 +38,7 @@ namespace PPP_Salaire
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = this.GridView1.SelectedRow;
-            Response.Redirect("~/StatisticEmploye.aspx?Id=" + row.Cells[1].Text);
+            Response.Redirect("~/Interface/StatisticEmploye.aspx?Id=" + row.Cells[1].Text);
         }
         //load the selected chart type
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pppMaster.Master" AutoEventWireup="true" CodeBehind="CongeEmploye.aspx.cs" Inherits="PPP_Salaire.CongeEmploye" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Interface/pppMaster.Master" AutoEventWireup="true" CodeBehind="CongeEmploye.aspx.cs" Inherits="PPP_Salaire.CongeEmploye" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headPlaceHolder" runat="server">
 </asp:Content>
@@ -17,25 +17,25 @@
                     <table>
                     <tr>
                         <td>
-                            <asp:Label ID="Label1" runat="server" Text="Selectionner la colonne sujet de recherche :"></asp:Label>
+                            <asp:Label ID="Label1" runat="server" CssClass="form-control" Text="Selectionner la colonne sujet de recherche :"></asp:Label>
                         </td>
                         <td>
-                            <asp:DropDownList ID="DropDownListColumn" Width="200px" runat="server"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownListColumn" CssClass="form-control" Width="200px" runat="server"></asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="Label2" runat="server" Text="saisir la chaine à rechercher :"></asp:Label>
+                            <asp:Label ID="Label2" CssClass="form-control" runat="server" Text="saisir la chaine à rechercher :"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TxId" Width="200px" runat="server" />
+                            <asp:TextBox ID="TxId" CssClass="form-control" Width="200px" runat="server" />
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <center>
                                 <br />
-                <asp:Button class="mybtn" runat="server" Width="200px" ID="btnSearch" Text="Search" OnClick="FilterResult" />
+                <asp:Button CssClass="btn btn-primary" runat="server" Width="200px" ID="btnSearch" Text="Search" OnClick="FilterResult" />
                                 </center>
                         </td>
                     </tr>
@@ -47,13 +47,13 @@
                     <Columns>
                         <asp:TemplateField HeaderText="Accepter">
                             <ItemTemplate>
-                                <asp:Button ID="btAccept" runat="server" Text="Accepter" Visible='<%# IsEnAttente((String)Eval("Status")) %>' OnClick="btAccept_Click" />
+                                <asp:Button ID="btAccept" class="btn btn-success" runat="server" Text="Accepter" Visible='<%# IsEnAttente((String)Eval("Status")) %>' OnClick="btAccept_Click" />
                                 <asp:HiddenField ID="HiddenFieldID" runat="server" Value='<%# Eval("Id") %>'/>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Refuser">
                             <ItemTemplate> 
-                                <asp:Button ID="btRefuser" runat="server" Text="Refuser" Visible='<%# IsEnAttente((String)Eval("Status")) %>' OnClick="btRefuser_Click" />
+                                <asp:Button ID="btRefuser" class="btn btn-danger" runat="server" Text="Refuser" Visible='<%# IsEnAttente((String)Eval("Status")) %>' OnClick="btRefuser_Click" />
                                 <asp:HiddenField ID="HiddenFieldID2" runat="server" Value='<%# Eval("Id") %>'/>
                             </ItemTemplate>
                         </asp:TemplateField>
