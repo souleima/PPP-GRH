@@ -86,7 +86,6 @@
                 </tr>
             </table>    
                     
-<asp:Button ID="btnExportPDF" CssClass="btn btn-primary" runat="server" Text="Export to PDF" onclick="btnExportPDF_Click" />
                 </center>
             </div>
         </div>
@@ -104,8 +103,8 @@
                         <asp:BoundField DataField="Nom" HeaderText="Nom" SortExpression="Nom" />
                         <asp:BoundField DataField="Prenom" HeaderText="Prenom" SortExpression="Prenom" />
                         <asp:BoundField DataField="Adresse" HeaderText="Adresse" SortExpression="Adresse" />
-                        <asp:BoundField DataField="Num_SS" HeaderText="Num_SS" SortExpression="Num_SS" />
-                        <asp:BoundField DataField="Date_dEmbauche" HeaderText="Date_dEmbauche" SortExpression="Date_dEmbauche" />
+                        <asp:BoundField DataField="NumSS" HeaderText="NumSS" SortExpression="NumSS" />
+                        <asp:BoundField DataField="DateEmbauche" HeaderText="DateEmbauche" SortExpression="DateEmbauche" />
                     </Columns>
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <EditRowStyle BackColor="#999999" />

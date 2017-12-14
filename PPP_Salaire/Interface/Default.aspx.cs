@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using PPP_Salaire.Migrations;
 
 namespace PPP_Salaire
 {
@@ -15,7 +16,6 @@ namespace PPP_Salaire
         protected void Page_Load(object sender, EventArgs e)
         {
             Session.Clear();
-
         }
         protected void btn_login_Click(object sender, EventArgs e)
         {

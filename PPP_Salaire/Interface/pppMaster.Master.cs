@@ -21,7 +21,6 @@ namespace PPP_Salaire
             {
                 GestionSalaireitem.Visible = false;
                 GestionCongeitem.Visible = false;
-                //DemanderCongeitem.Visible = false;
                 GestionEmployeitem.Visible = false;
                 AddEmployeritem.Visible = false;
                 GestionCategorieitem.Visible = false;

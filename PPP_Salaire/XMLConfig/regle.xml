@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<regle />
+<regle>
+  <Salaire>Salaire de base</Salaire>
+  <Arithmetique>*</Arithmetique>
+  <Arithmetique>9</Arithmetique>
+</regle>

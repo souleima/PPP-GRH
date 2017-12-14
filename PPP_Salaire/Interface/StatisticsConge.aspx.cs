@@ -122,27 +122,27 @@ namespace PPP_Salaire
             Chart.Series["Series1"].XValueMember = DropDownListX.SelectedValue;
             Chart.Series["Series1"].YValueMembers = DropDownListY.SelectedValue;
         }
-        //Working on this ...................
-        protected void btnExportPDF_Click(object sender, EventArgs e)
-        {
-            Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
-            PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
-            pdfDoc.Open();
-            using (MemoryStream stream = new MemoryStream())
-            {
-                this.Chart.SaveImage(stream, ChartImageFormat.Png);
-                iTextSharp.text.Image chartImage = iTextSharp.text.Image.GetInstance(stream.GetBuffer());
-                chartImage.ScalePercent(75f);
-                pdfDoc.Add(chartImage);
-                pdfDoc.Close();
+        ////Working on this ...................
+        //protected void btnExportPDF_Click(object sender, EventArgs e)
+        //{
+        //    Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+        //    PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
+        //    pdfDoc.Open();
+        //    using (MemoryStream stream = new MemoryStream())
+        //    {
+        //        this.Chart.SaveImage(stream, ChartImageFormat.Png);
+        //        iTextSharp.text.Image chartImage = iTextSharp.text.Image.GetInstance(stream.GetBuffer());
+        //        chartImage.ScalePercent(75f);
+        //        pdfDoc.Add(chartImage);
+        //        pdfDoc.Close();
 
-                Response.ContentType = "application/pdf";
-                Response.AddHeader("content-disposition", "attachment;filename=Chart.pdf");
-                Response.Cache.SetCacheability(HttpCacheability.NoCache);
-                Response.Write(pdfDoc);
-                Response.End();
-            }
-        }
+        //        Response.ContentType = "application/pdf";
+        //        Response.AddHeader("content-disposition", "attachment;filename=Chart.pdf");
+        //        Response.Cache.SetCacheability(HttpCacheability.NoCache);
+        //        Response.Write(pdfDoc);
+        //        Response.End();
+        //    }
+        //}
 
     }
 }

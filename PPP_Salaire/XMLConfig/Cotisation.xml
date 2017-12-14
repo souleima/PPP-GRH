@@ -3,5 +3,6 @@
   <ByDefaults></ByDefaults>
   <CheckedAttributes>
     <CheckedAttribute>Cotisations_Urssaf</CheckedAttribute>
+    <CheckedAttribute>Cotisations_APEC</CheckedAttribute>
   </CheckedAttributes>
 </Cotisation>

@@ -20,10 +20,10 @@ namespace PPP_Salaire.Entities
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string Adresse { get; set; }
-        public int Num_SS { get; set; }
-        public DateTime Date_dEmbauche { get; set; }
+        public int NumSS { get; set; }
+        public DateTime DateEmbauche { get; set; }
 
-        public Categorie Categorie_id { get; set; }
+        public Categorie CategorieId { get; set; }
         public virtual Salaire Salaire { get; set; }
         public List<DemandeConge> DemandeConges { get; set; }
     }

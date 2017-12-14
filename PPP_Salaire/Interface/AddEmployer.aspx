@@ -10,91 +10,68 @@
     <asp:Content ContentPlaceHolderID="PppContentPlaceHolder" runat="server">
 
         <form id="form1" runat="server">
-        <asp:FormView ID="FormView1" runat="server" AllowPaging="True" DataKeyNames="Id" DataSourceID="SqlDataSource2" DefaultMode="Insert" BackColor="Blue" CellSpacing="1" CssClass="table table-hover table-striped" >
+        <asp:FormView ID="FormView1" runat="server"  AllowPaging="True" DataKeyNames="Id" DataSourceID="SqlDataSource2" DefaultMode="Insert">
             <EditItemTemplate>
                 Nom:
-                <asp:TextBox ID="NomTextBox" runat="server" Text='<%# Bind("Nom") %>' />
-                <br />
+                <asp:TextBox ID="NomTextBox" CssClass="form-control" runat="server" Text='<%# Bind("Nom") %>' />
                 Prenom:
-                <asp:TextBox ID="PrenomTextBox" runat="server" Text='<%# Bind("Prenom") %>' />
-                <br />
+                <asp:TextBox ID="PrenomTextBox" CssClass="form-control" runat="server" Text='<%# Bind("Prenom") %>' />
                 Adresse:
-                <asp:TextBox ID="AdresseTextBox" runat="server" Text='<%# Bind("Adresse") %>' />
-                <br />
-                Num_SS:
-                <asp:TextBox ID="Num_SSTextBox" runat="server" Text='<%# Bind("Num_SS") %>' />
-                <br />
-                Date_dEmbauche:
-                <asp:TextBox ID="Date_dEmbaucheTextBox" runat="server" Text='<%# Bind("Date_dEmbauche") %>' />
-                <br />
+                <asp:TextBox ID="AdresseTextBox" CssClass="form-control" runat="server" Text='<%# Bind("Adresse") %>' />
+                NumSS:
+                <asp:TextBox ID="NumSSTextBox" CssClass="form-control" runat="server" Text='<%# Bind("NumSS") %>' />
+                DateEmbauche:
+                <asp:TextBox ID="DateEmbaucheTextBox" CssClass="form-control" runat="server" Text='<%# Bind("DateEmbauche") %>' />
                 login:
-                <asp:TextBox ID="loginTextBox" runat="server" Text='<%# Bind("login") %>' />
-                <br />
+                <asp:TextBox ID="loginTextBox" CssClass="form-control" runat="server" Text='<%# Bind("login") %>' />
                 password:
-                <asp:TextBox ID="passwordTextBox" runat="server" Text='<%# Bind("password") %>' />
-                <br />
+                <asp:TextBox ID="passwordTextBox" CssClass="form-control" runat="server" Text='<%# Bind("password") %>' />
                 Id:
-                <asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>' />
-                <br />
+                <asp:Label ID="IdLabel1" runat="server" CssClass="form-control" Text='<%# Eval("Id") %>' />
               <asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Annuler" />
             </EditItemTemplate>
             <InsertItemTemplate>
                 Nom:
-                <asp:TextBox ID="NomTextBox" runat="server" Text='<%# Bind("Nom") %>' />
-                <br />
+                <asp:TextBox ID="NomTextBox" CssClass="form-control" runat="server" Text='<%# Bind("Nom") %>' />
                 Prenom:
-                <asp:TextBox ID="PrenomTextBox" runat="server" Text='<%# Bind("Prenom") %>' />
-                <br />
+                <asp:TextBox ID="PrenomTextBox" CssClass="form-control" runat="server" Text='<%# Bind("Prenom") %>' />
                 Adresse:
-                <asp:TextBox ID="AdresseTextBox" runat="server" Text='<%# Bind("Adresse") %>' />
-                <br />
-                Num_SS:
-                <asp:TextBox ID="Num_SSTextBox" runat="server" Text='<%# Bind("Num_SS") %>' />
-                <br />
-                Date_dEmbauche:
-                <asp:TextBox ID="Date_dEmbaucheTextBox" runat="server" Text='<%# Bind("Date_dEmbauche") %>' />
-                <br />
+                <asp:TextBox ID="AdresseTextBox" CssClass="form-control" runat="server" Text='<%# Bind("Adresse") %>' />
+                NumSS:
+                <asp:TextBox ID="NumSSTextBox" CssClass="form-control" runat="server" Text='<%# Bind("NumSS") %>' />
+                DateEmbauche:
+                <asp:TextBox ID="DateEmbaucheTextBox" CssClass="form-control" runat="server" Text='<%# Bind("DateEmbauche") %>' />
                 login:
-                <asp:TextBox ID="loginTextBox" runat="server" Text='<%# Bind("login") %>' />
-                <br />
+                <asp:TextBox ID="loginTextBox" CssClass="form-control" runat="server" Text='<%# Bind("login") %>' />
                 password:
-                <asp:TextBox ID="passwordTextBox" runat="server" Text='<%# Bind("password") %>' />
-                <br />
+                <asp:TextBox ID="passwordTextBox" CssClass="form-control" runat="server" Text='<%# Bind("password") %>' />
                 
-                <asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Annuler" />
+                <asp:LinkButton ID="InsertCancelButton" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="Cancel" Text="Annuler" />
             </InsertItemTemplate>
             <ItemTemplate>
           
                 Nom:
-                <asp:Label ID="NomLabel" runat="server" Text='<%# Bind("Nom") %>' />
-                <br />
+                <asp:Label ID="NomLabel" runat="server" CssClass="form-control" Text='<%# Bind("Nom") %>' />
                 Prenom:
-                <asp:Label ID="PrenomLabel" runat="server" Text='<%# Bind("Prenom") %>' />
-                <br />
+                <asp:Label ID="PrenomLabel" runat="server" CssClass="form-control" Text='<%# Bind("Prenom") %>' />
                 Adresse:
-                <asp:Label ID="AdresseLabel" runat="server" Text='<%# Bind("Adresse") %>' />
-                <br />
-                Num_SS:
-                <asp:Label ID="Num_SSLabel" runat="server" Text='<%# Bind("Num_SS") %>' />
-                <br />
+                <asp:Label ID="AdresseLabel" runat="server" CssClass="form-control" Text='<%# Bind("Adresse") %>' />
+                NumSS:
+                <asp:Label ID="NumSSLabel" runat="server" CssClass="form-control" Text='<%# Bind("NumSS") %>' />
             
-                Date_dEmbauche:
-                <asp:Label ID="Date_dEmbaucheLabel" runat="server" Text='<%# Bind("Date_dEmbauche") %>' />
-                <br />
+                DateEmbauche:
+                <asp:Label ID="DateEmbaucheLabel" CssClass="form-control" runat="server" Text='<%# Bind("DateEmbauche") %>' />
             
                 login:
-                <asp:Label ID="loginLabel" runat="server" Text='<%# Bind("login") %>' />
-                <br />
+                <asp:Label ID="loginLabel" CssClass="form-control" runat="server" Text='<%# Bind("login") %>' />
                 password:
-                <asp:Label ID="passwordLabel" runat="server" Text='<%# Bind("password") %>' />
-                <br />
+                <asp:Label ID="passwordLabel" CssClass="form-control" runat="server" Text='<%# Bind("password") %>' />
                 Id:
-                <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
-                <br />
+                <asp:Label ID="IdLabel" CssClass="form-control" runat="server" Text='<%# Eval("Id") %>' />
             </ItemTemplate>
         </asp:FormView>
-            <asp:Button ID="Button1" runat="server" Text="Ajouter" OnClick="Button1_Click" />
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" DeleteCommand="DELETE FROM [Employes] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Employes] ([Nom], [Prenom], [Adresse], [Num_SS], [Date_dEmbauche], [login], [password]) VALUES (@Nom, @Prenom, @Adresse, @Num_SS, @Date_dEmbauche, @login, @password)" SelectCommand="SELECT [Nom], [Prenom], [Adresse], [Num_SS], [Date_dEmbauche], [login], [password], [Id] FROM [Employes]" UpdateCommand="UPDATE [Employes] SET [Nom] = @Nom, [Prenom] = @Prenom, [Adresse] = @Adresse, [Num_SS] = @Num_SS, [Date_dEmbauche] = @Date_dEmbauche, [login] = @login, [password] = @password WHERE [Id] = @Id" EnableCaching="True">
+            <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Ajouter" OnClick="Button1_Click" />
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PPPConnectionString %>" DeleteCommand="DELETE FROM [Employes] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Employes] ([Nom], [Prenom], [Adresse], [NumSS], [DateEmbauche], [login], [password]) VALUES (@Nom, @Prenom, @Adresse, @NumSS, @DateEmbauche, @login, @password)" SelectCommand="SELECT [Nom], [Prenom], [Adresse], [NumSS], [DateEmbauche], [login], [password], [Id] FROM [Employes]" UpdateCommand="UPDATE [Employes] SET [Nom] = @Nom, [Prenom] = @Prenom, [Adresse] = @Adresse, [NumSS] = @NumSS, [DateEmbauche] = @DateEmbauche, [login] = @login, [password] = @password WHERE [Id] = @Id" EnableCaching="True">
             <DeleteParameters>
                 <asp:Parameter Name="Id" Type="Int32" />
             </DeleteParameters>
@@ -102,8 +79,8 @@
                 <asp:Parameter Name="Nom" Type="String" />
                 <asp:Parameter Name="Prenom" Type="String" />
                 <asp:Parameter Name="Adresse" Type="String" />
-                <asp:Parameter Name="Num_SS" Type="Int32" />
-                <asp:Parameter Name="Date_dEmbauche" Type="DateTime" />
+                <asp:Parameter Name="NumSS" Type="Int32" />
+                <asp:Parameter Name="DateEmbauche" Type="DateTime" />
                 <asp:Parameter Name="login" Type="String" />
                 <asp:Parameter Name="password" Type="String" />
             </InsertParameters>
@@ -111,8 +88,8 @@
                 <asp:Parameter Name="Nom" Type="String" />
                 <asp:Parameter Name="Prenom" Type="String" />
                 <asp:Parameter Name="Adresse" Type="String" />
-                <asp:Parameter Name="Num_SS" Type="Int32" />
-                <asp:Parameter Name="Date_dEmbauche" Type="DateTime" />
+                <asp:Parameter Name="NumSS" Type="Int32" />
+                <asp:Parameter Name="DateEmbauche" Type="DateTime" />
                 <asp:Parameter Name="login" Type="String" />
                 <asp:Parameter Name="password" Type="String" />
                 <asp:Parameter Name="Id" Type="Int32" />

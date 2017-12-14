@@ -5,5 +5,7 @@
   </ByDefaults>
   <CheckedAttributes>
     <CheckedAttribute>Primes_éventuelles</CheckedAttribute>
+    <CheckedAttribute>Avantages_en_nature_éventuels</CheckedAttribute>
+    <CheckedAttribute>prime_ancienneté</CheckedAttribute>
   </CheckedAttributes>
 </Remuneration>

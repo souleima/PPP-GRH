@@ -3,7 +3,7 @@ namespace PPP_Salaire.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class mig1 : DbMigration
+    public partial class intial : DbMigration
     {
         public override void Up()
         {
@@ -53,16 +53,16 @@ namespace PPP_Salaire.Migrations
                         Nom = c.String(),
                         Prenom = c.String(),
                         Adresse = c.String(),
-                        Num_SS = c.Int(nullable: false),
-                        Date_dEmbauche = c.DateTime(nullable: false),
-                        Categorie_id_Id = c.Int(),
+                        NumSS = c.Int(nullable: false),
+                        DateEmbauche = c.DateTime(nullable: false),
+                        CategorieId_Id = c.Int(),
                         Salaire_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Categories", t => t.Categorie_id_Id)
+                .ForeignKey("dbo.Categories", t => t.CategorieId_Id)
                 .ForeignKey("dbo.Salaires", t => t.Salaire_Id)
                 .Index(t => t.login, unique: true, name: "login")
-                .Index(t => t.Categorie_id_Id)
+                .Index(t => t.CategorieId_Id)
                 .Index(t => t.Salaire_Id);
             
             CreateTable(
@@ -127,11 +127,11 @@ namespace PPP_Salaire.Migrations
             DropForeignKey("dbo.Salaires", "Remuneration_Id", "dbo.Remunerations");
             DropForeignKey("dbo.Salaires", "Cotisation_Id", "dbo.Cotisations");
             DropForeignKey("dbo.DemandeConges", "Employe_Id", "dbo.Employes");
-            DropForeignKey("dbo.Employes", "Categorie_id_Id", "dbo.Categories");
+            DropForeignKey("dbo.Employes", "CategorieId_Id", "dbo.Categories");
             DropIndex("dbo.Salaires", new[] { "Remuneration_Id" });
             DropIndex("dbo.Salaires", new[] { "Cotisation_Id" });
             DropIndex("dbo.Employes", new[] { "Salaire_Id" });
-            DropIndex("dbo.Employes", new[] { "Categorie_id_Id" });
+            DropIndex("dbo.Employes", new[] { "CategorieId_Id" });
             DropIndex("dbo.Employes", "login");
             DropIndex("dbo.DemandeConges", new[] { "Employe_Id" });
             DropTable("dbo.Remunerations");

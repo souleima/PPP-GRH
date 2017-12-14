@@ -66,8 +66,8 @@ namespace PPP_Salaire.Repositories
                     Nom = rdr.GetString(rdr.GetOrdinal("Nom")),
                     Prenom = rdr.GetString(rdr.GetOrdinal("Prenom")),
                     Adresse = rdr.GetString(rdr.GetOrdinal("Adresse")),
-                    Num_SS = rdr.GetInt32(rdr.GetOrdinal("Num_SS")),
-                    Date_dEmbauche = rdr.GetDateTime(rdr.GetOrdinal("Date_dEmbauche"))
+                    NumSS = rdr.GetInt32(rdr.GetOrdinal("NumSS")),
+                    DateEmbauche = rdr.GetDateTime(rdr.GetOrdinal("DateEmbauche"))
                 });
 
             };

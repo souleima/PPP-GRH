@@ -3,5 +3,8 @@
   <ByDefaults>
     <ByDefault>Salaire_de_base</ByDefault>
   </ByDefaults>
-  <CheckedAttributes></CheckedAttributes>
+  <CheckedAttributes>
+    <CheckedAttribute>Heures_retards</CheckedAttribute>
+    <CheckedAttribute>Heures_supplementaire</CheckedAttribute>
+  </CheckedAttributes>
 </Salaire>

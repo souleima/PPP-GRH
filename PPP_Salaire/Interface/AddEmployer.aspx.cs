@@ -23,7 +23,7 @@ namespace PPP_Salaire
             {
                 FormView1.InsertItem(true);
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (System.Data.SqlClient.SqlException )
             {
 
                 string script = "alert(\"This login exists!\");";

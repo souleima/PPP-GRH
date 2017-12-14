@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="pppMaster.master.cs" Inherits="PPP_Salaire.pppMaster" %>
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="pppMaster.master.cs" Inherits="PPP_Salaire.pppMaster" %>
 
 <!DOCTYPE html>
 
@@ -151,7 +152,7 @@
                                  </ul>
 
                         <li id="parametrage" runat="server">
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Parametrage<span class="fa arrow"></span></a>
+                            <i class="fa fa-sitemap fa-fw"></i>Parametrage<span class="fa arrow"></span>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="ParametrerSalaireV2.aspx">Salaire</a>
@@ -159,14 +160,9 @@
                                  <li>
                                     <a href="ParametrerEmploye.aspx">Employé</a>
                                 </li>
-                                <%--<li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                </li>--%>
+                                <li>
+                                    <a href="AjouterConge.aspx">Ajouter Conge</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>

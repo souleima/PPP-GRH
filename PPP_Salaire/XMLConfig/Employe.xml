@@ -2,6 +2,7 @@
 <Employe>
   <ByDefaults></ByDefaults>
   <CheckedAttributes>
-    <CheckedAttribute>Num_SS</CheckedAttribute>
+    <CheckedAttribute>login</CheckedAttribute>
+    <CheckedAttribute>DateEmbauche</CheckedAttribute>
   </CheckedAttributes>
 </Employe>

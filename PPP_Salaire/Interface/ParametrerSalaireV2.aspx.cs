@@ -434,7 +434,7 @@ namespace PPP_Salaire
             IDictionary<int, string> dict4 = (IDictionary<int, string>)ViewState["expressionsArithmethiques"];
             int count = (int)ViewState["expressionsIndice"];
             MyXMLUtilities.SauvgarderRegle(dict1, dict2, dict3, dict4, count);
-            Response.Redirect("~/GestionSalaire.aspx");
+            Response.Redirect("~/Interface/GestionSalaire.aspx");
         }
     }
 }

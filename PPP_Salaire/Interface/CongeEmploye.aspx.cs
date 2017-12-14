@@ -74,7 +74,7 @@ namespace PPP_Salaire
                 employeeDBContext.SaveChanges();
             }
             ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Demande Acceptee'); window.location='" 
-                + Request.ApplicationPath + "CongeEmploye.aspx?Id="+ Request.QueryString["Id"] + "';", true);
+                + Request.ApplicationPath + "Interface/CongeEmploye.aspx?Id=" + Request.QueryString["Id"] + "';", true);
         }
         //refuser
         protected void btRefuser_Click(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace PPP_Salaire
                 employeeDBContext.SaveChanges();
             }
             ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Demande Refusee'); window.location='" 
-                + Request.ApplicationPath + "CongeEmploye.aspx?Id=" + Request.QueryString["Id"] + "';", true);
+                + Request.ApplicationPath + "Interface/CongeEmploye.aspx?Id=" + Request.QueryString["Id"] + "';", true);
         }
         //changer l'index de la gripView 
         protected void GridViewDemande_PageIndexChanging(object sender, GridViewPageEventArgs e)
